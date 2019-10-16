@@ -1,0 +1,90 @@
+.sidebar-widget {
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	@include font-size(.9375);
+
+	&:last-of-type {
+		border: none;
+	}
+
+	.widget-title {
+		border-bottom: 1px solid $color__base-light;
+		line-height: 1;
+		margin: 0 0 .5em 0;
+		padding: .625em .25em;
+	}
+
+	select {
+		max-width: 100%;
+	}
+
+	ul {
+		li {
+			border-bottom: 1px solid $color__base-xlight;
+			line-height: 1.4em;
+			padding: 0 .438em .5em;
+			margin-bottom: .5em;
+		}
+
+		a {
+			color: $color__base;
+			display: inline-block;
+			width: 100%;
+
+			&:hover {
+				color: $color__highlight;
+			}
+		}
+	}
+
+	.menu {
+		a {
+			color: $color__base;
+			display: inline-block;
+			text-transform: uppercase;
+
+			&:hover {
+				color: $color__highlight;
+			}
+		}
+
+		li {
+			li {
+				border: none;
+
+				a {
+					padding: .5em 0 .5em 1.5em;
+				}
+
+				li {
+					a {
+						padding-left:3em;
+					}
+				}
+			}
+		}
+
+		ul {
+			display: none;
+			padding-bottom: .75em;
+
+			ul {
+				padding-bottom: .125em;
+			}
+		}
+
+		li.current-menu-item ul,
+		li.current-menu-ancestor ul {
+			display: block;
+		}
+
+		li.current-menu-item > a {
+			color: $color__highlight;
+		}
+	}
+
+	.menu-item-has-children.current-menu-item > a,
+	.menu-item-has-children.current-menu-ancestor > a{
+		padding-bottom: .5em;
+	}
+}

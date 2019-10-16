@@ -1,0 +1,112 @@
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: $color__highlight;
+	color: #ffffff;
+	border: 0;
+	border-radius: 6px;
+	cursor: pointer;
+	line-height: normal;
+	padding: 1.125em 1em 1em;
+	position: relative;
+	white-space: normal;
+	z-index: 1;
+
+	&:hover {
+		color: #ffffff;
+		background-color: $color__secondary;
+	}
+}
+
+.btn {
+	background-color: $color__highlight;
+	border-radius: 6px;
+	color:  #ffffff;
+	cursor: pointer;
+	line-height: normal;
+	padding: 1em 1em .875em;
+	position: relative;
+	white-space: normal;
+	width: auto;
+	z-index: 1;
+
+	&:hover {
+		color: #ffffff;
+	}
+
+	&:focus,
+	&:active {
+		outline: 0;
+		border: 0;
+		color: #ffffff;
+		border-color: transparent;
+	}
+
+	&:after {
+		background-color: rgba(0,0,0,0.2);
+		border-radius: 6px;
+		content: '';
+		position: absolute;
+		z-index: -1;
+		height: 0;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+		transition: all 0.15s ease-in-out;
+	}
+
+	&:hover:after {
+		height: 100%;
+		opacity: 1;
+	}
+
+	&.white {
+		background-color: #ffffff;
+		color: #000000;
+
+		&:after {
+			background-color: $color__base;
+		}
+
+		&:hover {
+			color: #ffffff;
+		}
+	}
+
+	&.secondary {
+		background-color: $color__secondary;
+	}
+
+	&.dark {
+		background-color: $color__base;
+
+		&:after {
+			background-color: rgba(255,255,255,0.2);
+		}
+	}
+
+	&.wide {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+	display: none;
+}
+
+.btn {
+	display: inline-block;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	// IE10+ CSS styles go here
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		padding: 1.25em 1em 1em;
+	}
+}

@@ -1,0 +1,84 @@
+.blog,
+.archive {
+
+	.hentry {
+		background-color: #ffffff;
+		margin: 0 0 2em;
+		padding: 0 1.5em;
+		@include font-size(1);
+
+		.wp-post-image {
+			display: block;
+			width: 100%;
+		}
+
+		.entry-header,
+		.entry-content,
+		.link-more {
+			overflow: hidden;
+		}
+
+		&.sticky {
+			border-top:2px solid $color__highlight;
+		}
+	}
+
+	.entry-content {
+		p {
+			margin-bottom: .25em;
+		}
+	}
+
+	.format-status .entry-content p {
+		margin-bottom: 1em;
+	}
+
+	.entry-header {
+		padding: 1.5em 0 1em;
+	}
+
+	.entry-title {
+		word-break: break-all;
+		@include font-size(1.375);
+	}
+}
+
+.fi-link {
+	display: inline-block;
+	margin: 1.5em 1.5em 1.5em 0;
+	max-width: 300px;
+	overflow: hidden;
+	float: left;
+
+	@include breakpoint(tablet-v) {
+		float:none;
+		margin-bottom: 0;
+		margin-right: 0;
+		max-width: none;
+		width: 100%;
+	}
+}
+
+.featured-image {
+	display: inline-block;
+	transition: all 0.25s ease-in-out;
+
+	&:hover {
+		transform: scale(1.15,1.15);
+	}
+}
+
+.archive-description {
+	line-height: 1.2;
+}
+
+/* READ MORE LINKS */
+.more-link {
+	display: block;
+	font-weight: $font__weight-bold;
+	line-height: 1;
+	padding: 2em 0;
+	position: relative;
+	text-transform: uppercase;
+	@include font-size(.75);
+}

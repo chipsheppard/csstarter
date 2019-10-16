@@ -1,0 +1,21 @@
+.footer-widget {
+	margin-bottom: 1.5em;
+	@include font-size(.875);
+
+	.widget-title {
+		margin-bottom: .5rem;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+
+		li {
+			padding: 0 0 .75em 0;
+
+			a {
+				width: 100%;
+				display: inline-block;
+			}
+		}
+	}
+}

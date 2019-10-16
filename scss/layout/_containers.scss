@@ -1,0 +1,97 @@
+.site-content {
+	clear: both;
+
+	.content-area {
+		padding: 2.5em 0;
+		width: 100%;
+	}
+
+	.widget-area {
+		display: inline-block;
+		overflow: hidden;
+		padding: 3.25em 0 2.5em;
+		width: $size__site-sidebar;
+
+		@include breakpoint(tablet-v) {
+			padding: 2em 0;
+		}
+	}
+}
+
+.inner-wrap,
+.content-inner-wrap {
+	margin: 0 auto;
+	max-width: $size__site-max;
+	width: 100%;
+	padding: 0 $size__site-padding;
+}
+
+.inner-wrap {
+	position: relative;
+}
+
+
+// Sidebar Content ------------------------------
+.sidebar-left {
+
+	.content-area {
+		float: right;
+		width: $size__site-content;
+	}
+
+	.site-content .widget-area {
+		float: left;
+
+		@include breakpoint(tablet-v) {
+			padding-bottom: 0;
+		}
+	}
+}
+
+// Content Sidebar ------------------------------
+.sidebar-right {
+
+	.content-area {
+		float: left;
+		width: $size__site-content;
+	}
+
+	.widget-area {
+		float: right;
+	}
+}
+
+// No Sidebar Silo ------------------------------
+.nosidebar-silo .content-inner-wrap {
+	padding-left: 15%;
+	padding-right: 15%;
+
+	@include breakpoint(tablet-h) {
+		padding-left: 8%;
+		padding-right: 8%;
+	}
+	@include breakpoint(phone-h) {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+// Stack sidebars up for smaller devices
+@include breakpoint(tablet-v) {
+	.content-area,
+	.site-content .widget-area,
+	.sidebar-right .content-area,
+	.sidebar-right .site-content .widget-area,
+	.sidebar-left .content-area,
+	.sidebar-left .site-content .widget-area {
+		display: block;
+		float: none;
+		width: 100%;
+	}
+	.sidebar-right .site-content .widget-area {
+		padding-top: 0;
+	}
+	.sidebar-left .content-area {
+		padding-top: 0;
+	}
+}

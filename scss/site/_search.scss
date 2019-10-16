@@ -1,0 +1,65 @@
+/* Search Results
+--------------------------------------------- */
+
+.search {
+
+	.page-header {
+		margin-bottom: 2em;
+	}
+
+	.page-title {
+		span {
+			font-family: $font__main;
+			font-weight: $font__weight-normal;
+			text-transform: none;
+			display: block;
+			@include font-size(1);
+		}
+	}
+
+	article {
+		margin: 0 0 3.5em 0;
+		position: relative;
+
+		&:before,
+		&:after {
+			@include clearfix;
+		}
+		&:after {
+			@include clearfix-after;
+		}
+	}
+
+	.featured-image {
+		float: left;
+
+		@include breakpoint(phone-h) {
+			display: block;
+			float: none;
+			margin: 0;
+			text-align: center;
+		}
+	}
+	.fi-link {
+		margin: 0 1.5em 1.5em 0;
+	}
+
+	.entry-header {
+		padding-bottom: 1em;
+		overflow: hidden;
+	}
+
+	.entry-title {
+		@include font-size(1.375);
+	}
+
+	.entry-content,
+	.entry-summary {
+		margin: 0;
+		overflow: hidden;
+	}
+
+	.more-link {
+		padding:0;
+	}
+}

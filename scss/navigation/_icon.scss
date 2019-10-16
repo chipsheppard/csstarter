@@ -1,0 +1,122 @@
+.responsive-menu-icon {
+	border: 0;
+	background: none;
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	right: .625em;
+	top: 1.25em;
+	overflow: visible;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	z-index: 999;
+
+	@include breakpoint(tablet-v) {
+		display: block;
+	}
+	@include breakpoint(phone-h) {
+		right: .75em;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: transparent;
+	}
+	&:focus {
+		outline: 1px dotted ButtonText;
+	}
+
+	.menu-icon-wrap {
+		width: 30px;
+		height: 24px;
+		display: inline-block;
+
+		@include breakpoint(phone-h) {
+			width: 20px;
+			height: 16px;
+		}
+	}
+
+	.menu-icon {
+		opacity: 1;
+		position: relative;
+		top: 16px;
+		left: 7px;
+	}
+	.menu-icon,
+	.menu-icon::before,
+	.menu-icon::after {
+		background-color: $color__base;
+		position: absolute;
+		height: 3px;
+		transition-property: transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease;
+		width: 30px;
+
+		@include breakpoint(phone-h) {
+			width: 20px;
+			height: 2px;
+		}
+	}
+
+	.menu-icon::before,
+	.menu-icon::after {
+		content: "";
+		display: block;
+	}
+
+	.menu-icon::before {
+		top: -8px;
+
+		@include breakpoint(phone-h) {
+			top: -6px;
+		}
+	}
+
+	.menu-icon::after {
+		bottom: -8px;
+
+		@include breakpoint(phone-h) {
+			bottom: -6px;
+		}
+	}
+
+	&:hover {
+		.menu-icon {
+			opacity: 0.8;
+		}
+	}
+}
+
+/*
+ * Spin
+ ------------------------------------------ */
+.menu-icon {
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.menu-icon::before {
+	transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in;
+}
+.menu-icon::after {
+	transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.toggled-on .menu-icon {
+    transform: rotate(225deg);
+	transition-delay: 0.14s;
+	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.toggled-on .menu-icon::before {
+	top: 0;
+	opacity: 0;
+	transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out;
+}
+.toggled-on .menu-icon::after {
+	bottom: 0;
+	transform: rotate(-90deg);
+	transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+}

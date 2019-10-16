@@ -1,0 +1,23 @@
+.entry-footer {
+	border-top: 1px dashed $color__base-xlight;
+	border-bottom: 1px dashed $color__base-xlight;
+	color: $color__base-light;
+	padding: .5em 0;
+	@include font-size(.75);
+}
+
+.cat-links,
+.tags-links {
+	color: $color__base-light;
+	display: inline;
+	margin-right: .75em;
+	padding:5px 10px 5px 0;
+}
+
+.edit-link {
+	float: right;
+
+	a {
+		display: inline-block;
+	}
+}

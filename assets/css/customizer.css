@@ -1,0 +1,109 @@
+span.description {
+	font-style: normal;
+}
+
+/* extra space for the 2 header layout PNGs */
+#customize-control-csstarter_settings-header_layout label {
+	margin-right: .5em;
+}
+
+/* Header Media section ( Background Image/Video ) */
+#customize-control-external_header_video {
+	border-bottom: 1px dashed #bbbbbb;
+	margin-bottom: 24px;
+	padding-bottom: 24px;
+}
+
+/* SECTIONS
+----------------------------------------------- */
+#sub-accordion-section-csstarter_themeops .customize-control-radio,
+#sub-accordion-section-csstarter_themeops .customize-control-select,
+#sub-accordion-section-csstarter_themeops .customize-control-textarea,
+#sub-accordion-section-csstarter_themeops .customize-control-range,
+#sub-accordion-section-csstarter_themeops .customize-control-color,
+#sub-accordion-section-csstarter_themeops .customize-control-alpha-color,
+#sub-accordion-section-csstarter_themeops .customize-control-checkbox,
+#sub-accordion-section-csstarter_header_layouts .customize-control-select,
+#sub-accordion-section-csstarter_page_layouts .customize-control-select {
+	padding: 0 12px;
+	background-color: #f3f3f3;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#sub-accordion-section-csstarter_page_layouts .customize-control-select {
+	padding-bottom: 12px;
+}
+
+/* Checkboxes */
+#customize-control-csstarter_settings-meta_date,
+#customize-control-csstarter_settings-meta_author,
+#customize-control-csstarter_settings-meta_comments,
+#customize-control-csstarter_settings-meta_updated {
+	margin-bottom: 0;
+}
+#customize-control-csstarter_settings-meta_date,
+#customize-control-csstarter_settings-meta_author,
+#customize-control-csstarter_settings-meta_comments {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+#customize-control-csstarter_settings-meta_updated {
+	padding-top: 0;
+}
+
+/* TOP Control Blocks
+----------------------------------------------- */
+#customize-control-csstarter_settings-home_layout_setting.customize-control-select,
+#customize-control-csstarter_settings-meta_footer.customize-control-checkbox {
+	border-top: 1px solid #ccc;
+	padding-top: 12px;
+}
+
+/* BOTTOM Control Blocks
+------------------------------------------------- */
+#customize-control-csstarter_settings-search_layout_setting.customize-control-select,
+#customize-control-csstarter_settings-meta_updated.customize-control-checkbox {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 12px;
+}
+
+/* TOP & BOTTOM - Single control
+------------------------------------------------- */
+#customize-control-csstarter_settings-header_layout.customize-control-select {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+/* LABELS
+------------------------------------------------ */
+#sub-accordion-section-csstarter_themeops .customize-control-text,
+#sub-accordion-section-csstarter_header_layouts .customize-control-text {
+	margin-bottom: 0;
+}
+#sub-accordion-section-csstarter_themeops .customize-control-text .customize-control-title,
+#sub-accordion-section-csstarter_header_layouts .customize-control-text .customize-control-title {
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+
+/* INNER HEADING
+------------------------------------------------- */
+#customize-control-themeops-metaheader-message {
+	background-color: #f3f3f3;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	margin: 0;
+	box-sizing: border-box;
+}
+#customize-control-themeops-metaheader-message {
+	padding: 0 12px;
+}
+#customize-control-themeops-metaheader-message.customize-control-text {
+	margin-top: 0;
+}

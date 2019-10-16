@@ -1,0 +1,72 @@
+a.aligncenter img,
+.wp-block-image.aligncenter img {
+	display: block;
+	margin: 0 auto;
+}
+
+img.aligncenter,
+.aligncenter {
+	display: block;
+	margin: 0 auto 24px;
+}
+
+img.alignnone {
+	margin-bottom: 12px;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+a.alignleft,
+a.alignright {
+	max-width: 100%;
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 24px 24px 0;
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 0 24px 24px;
+}
+
+@include breakpoint(phone-h) {
+	.alignleft,
+	.alignright {
+		float: none;
+		display:block;
+		text-align: left;
+	}
+	a.alignleft,
+	img.alignleft,
+	.wp-caption.alignleft {
+		margin-right: 0;
+	}
+	a.alignright,
+	img.alignright,
+	.wp-caption.alignright {
+		margin-left: 0;
+	}
+	img.centered,
+	img.alignleft,
+	img.alignright {
+		width: 100%;
+	}
+	img.alignleft {
+		margin-left: 0;
+	}
+	img.alignleft {
+		margin-right: 0;
+	}
+}

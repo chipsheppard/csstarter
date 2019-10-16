@@ -1,0 +1,67 @@
+.col-1-2,.col-1-3,.col-2-3,.col-1-4,.col-3-4,.col-1-5,.col-2-5,.col-3-5,.col-4-5,.col-1-6,
+.col-5-6,.col-1-7,.col-2-7,.col-3-7,.col-4-7,.col-5-7,.col-6-7,.col-1-8,.col-3-8,.col-5-8,.col-7-8 {
+	float: left;
+	margin-left: 2.564102564102564%;
+}
+
+.col-1-2 {width:48.717948717948715%;}
+.col-1-3 {width:31.623931623931625%;}
+.col-2-3 {width:65.81196581196582%;}
+.col-1-4 {width:23.076923076923077%;}
+.col-3-4 {width:74.35897435897436%;}
+.col-1-5 {width:17.94871794871795%;}
+.col-2-5 {width:38.46153846153846%;}
+.col-3-5 {width:58.97435897435897%;}
+.col-4-5 {width:79.48717948717948%;}
+.col-1-6 {width:14.52991452991453%;}
+.col-5-6 {width:82.90598290598291%;}
+.col-1-7 {width:12.08791208791209%;}
+.col-2-7 {width:26.73992673992674%;}
+.col-3-7 {width:41.39194139194139%;}
+.col-4-7 {width:56.04395604395604%;}
+.col-5-7 {width:70.69597069597069%;}
+.col-6-7 {width:85.34798534798534%;}
+.col-1-8 {width:10.25641025641026%;}
+.col-3-8 {width:35.8974358974359%;}
+.col-5-8 {width:61.53846153846154%;}
+.col-7-8 {width:87.17948717948718%;}
+
+.first {
+	clear:both;
+	margin-left:0;
+}
+.nm {
+	margin-left:0;
+}
+.silo {
+	float:none;
+	display:block;
+	margin:0 auto;
+}
+.wp-block-columns.silo {
+	display: flex;
+}
+.pullright {
+	float:right;
+}
+
+.pad-l {
+	padding-left: 1.5em;
+}
+.pad-r {
+	padding-right: 1.5em;
+}
+
+
+@include breakpoint(tablet-v) {
+	.col-1-2,.col-1-3,.col-2-3,.col-1-4,.col-3-4,.col-1-5,.col-2-5,.col-3-5,.col-4-5,.col-1-6,.col-5-6,.col-1-7,.col-2-7,.col-3-7,.col-4-7,.col-5-7,.col-6-7,.col-1-8,.col-3-8,.col-5-8,.col-7-8,.pullright {
+		clear: both;
+		display:block;
+		float:none;
+		margin:0;
+		width:100%;
+	}
+	.pad-l, .pad-r {
+		padding: 0;
+	}
+}

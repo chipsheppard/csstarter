@@ -1,0 +1,68 @@
+// Shop page title
+.woocommerce-products-header,
+.product_title.entry-title {
+	margin-bottom: 1em;
+}
+
+// WOO OVERRIDES
+// ln. 134
+.woocommerce .woocommerce-breadcrumb {
+	border-top: 1px solid $color__base-xlight;
+	border-bottom: 1px solid $color__base-xlight;
+	padding: .75em 0 .625em;
+}
+
+// ln. 634
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button{
+	background-color: $color__highlight;
+	color: #ffffff;
+	border: 0;
+	border-radius: 6px;
+	font-weight: $font__weight-normal;
+	padding: 1em;
+	position: relative;
+	white-space: normal;
+	z-index: 1;
+// ln. 687
+	&:hover {
+		color: #ffffff;
+		background-color: $color__secondary;
+	}
+
+	&:focus,
+	&:active {
+		outline: 0;
+		border: 0;
+		color: #ffffff;
+	}
+}
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+	padding-top: 1.125em;
+}
+
+// ln. 696
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt{
+	background-color: $color__secondary;
+// ln. 704
+	&:hover {
+		background-color: #dd0000;
+	}
+}
+
+// ln. 269
+.woocommerce div.product div.images .flex-control-thumbs li {
+	padding: 10px 5px;
+}
+
+// ln. 525
+.woocommerce .products ul li,
+.woocommerce ul.products li {
+    text-align: center;
+}

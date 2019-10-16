@@ -1,0 +1,23 @@
+@media only screen and (min-width:1024px) {
+	.mobile-only {
+		display: none;
+	}
+}
+
+@include breakpoint(tablet-h) {
+	.desktop-only {
+		display: none;
+	}
+}
+
+.ta-center {
+	text-align: center;
+}
+
+.ta-right {
+	text-align: right;
+}
+
+img.flex {
+	width: 100%;
+}

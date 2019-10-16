@@ -1,0 +1,50 @@
+q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+}
+
+blockquote {
+	background: #ffffff;
+	box-shadow: 0px 0px 4px $color__base-xlight;
+	margin: .75em 1.5em 1.5em 0;
+	padding: 1.5em 2em;
+	position: relative;
+	quotes: "\201C""\201D""\201C""\201D";
+
+	@include breakpoint(phone-h) {
+		padding: 1.25em 1.375em;
+	}
+
+	cite {
+		display: block;
+		font-weight: $font__weight-bold;
+		font-style: normal;
+		line-height:1.25;
+		margin-top: .5em;
+		text-transform: uppercase;
+		@include font-size(.875);
+
+		&:before {
+			content: '';
+			width: 2.5em;
+			height: .25em;
+			margin-right: 1em;
+			border-top: 1px solid $color__base;
+			display: inline-block;
+		}
+
+		span {
+			font-weight: $font__weight-normal;
+			@include font-size(.75);
+		}
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}

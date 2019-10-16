@@ -1,0 +1,255 @@
+/*
+ * Wide & Full width images
+ ---------------------------------- */
+
+.alignwide {
+	margin-left: -40px;
+	margin-right: -40px;
+	width: auto;
+	max-width: 1000%;
+
+	@include breakpoint(desktop-s) {
+		margin-left: -4%;
+		margin-right: -4%;
+	}
+	@include breakpoint(phone-h) {
+		margin-left: -5%;
+		margin-right: -5%;
+	}
+}
+
+.alignfull {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	width: auto;
+	max-width: 1000%;
+}
+.alignwide img,
+.alignfull img {
+	display: block;
+	width: 100%;
+}
+
+@include breakpoint(tablet-min-v) {
+	.sidebar-right .alignfull {
+		margin-left: calc(70% + 1em - 50vw);
+	    margin-right: -40px;
+	}
+	.sidebar-left .alignfull {
+		margin-left: -40px;
+	    margin-right: calc(70% + 1em - 50vw);
+	}
+}
+
+.wp-block-image {
+	margin-bottom: 1.4em;
+
+	img {
+		display: block;
+	}
+
+	figcaption {
+	    color: $color__base-medium;
+		line-height: 1.4;
+	}
+
+	&.aligncenter {
+		text-align: center;
+
+		figcaption {
+		    text-align: center;
+		}
+	}
+
+	&.alignleft.is-resized {
+		margin: 0 1.75em 1.5em 0;
+	}
+	&.alignright.is-resized {
+		margin: 0 0 1.5em 1.75em;
+	}
+}
+
+.wp-block-cover.alignright {
+	margin: 0 0 24px 24px;
+}
+.wp-block-cover.alignleft {
+	margin: 0 24px 24px 0;
+}
+.wp-block-cover.aligncenter {
+	clear: both;
+}
+
+.wp-block-spacer {
+	clear: both;
+}
+
+.wp-block-cover-image {
+
+	&.alignleft {
+		margin-right: 1em;
+	}
+	&.alignright {
+		margin-left: 1em;
+	}
+	&.aligncenter {
+		clear: both;
+
+		.wp-block-cover-image-text {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+}
+
+/*
+ * Blockquotes
+ ---------------------------------------------- */
+.wp-block-pullquote {
+
+	&:before {
+		display: none;
+	}
+
+	&.alignwide,
+	&.alignfull {
+		border: none;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	&.alignleft,
+	&.alignright {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	&.alignright {
+		margin: 0 0 1.5em 1.5em;
+	}
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+ 	margin: 0 0 1.5em;
+ 	padding: 1.5em 2em 1.5em 3.5em;
+}
+
+/*
+ * Gallery
+ ---------------------------------- */
+
+.wp-block-separator {
+	clear:both;
+	display: block;
+}
+.wp-block-gallery.alignleft {
+	margin-right: 1.5em;
+}
+.wp-block-gallery.alignright {
+	margin-lef: 1.5em;
+}
+/*
+ * Videos
+ ---------------------------------- */
+.alignwide iframe,
+.alignwide .jetpack-video-wrapper > iframe {
+	width: calc(100% + 80px) !important;
+}
+.alignfull iframe,
+.alignfull .jetpack-video-wrapper > iframe {
+	width: 100% !important;
+}
+
+/*
+ * Buttons
+ ---------------------------------- */
+.wp-block-button {
+
+	.wp-block-button__link {
+	    border: none;
+	    border-radius: 6px;
+	    box-shadow: none;
+	    cursor: pointer;
+	    display: inline-block;
+		position: relative;
+		white-space: normal;
+		width: auto;
+		z-index: 1;
+
+		&:after {
+			background-color: rgba(0,0,0,0.2);
+			border-radius: 6px;
+			content: '';
+			position: absolute;
+			z-index: -1;
+			height: 0;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			opacity: 0;
+			transition: all 0.2s ease-in-out;
+		}
+
+		&:hover {
+			color: #fff;
+		}
+		&:hover:after {
+			height: 100%;
+			opacity: 1;
+		}
+	}
+
+	&.alignleft {
+		margin-right: 1.5em;
+	}
+	&.alignright {
+		margin-left: 1.5em;
+	}
+}
+
+.wp-block-columns {
+
+	&.has-6-columns,
+	&.has-5-columns,
+	&.has-4-columns,
+	&.has-3-columns,
+	&.has-2-columns {
+
+	.wp-block-column:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
+
+// Transition to 2 columns for all rows
+@media (max-width: 780px) and (min-width: 600px) {
+	.wp-block-column {
+    	flex-basis: 47%;
+	}
+}
+// 2 columns for all rows
+@media (max-width: 780px) {
+	.wp-block-column:nth-child(even) {
+	    margin-right: 0;
+	}
+}
+
+// Override plugin styles to get even edges
+@media (min-width: 780px) {
+	.wp-block-column:not(:first-child),
+	.wp-block-column:nth-child(2n) {
+	    margin-left: 0;
+	}
+}
+
+.wp-block-columns {
+	.wp-block-column {
+		margin-bottom: 0;
+		padding: .75em 1em 0;
+
+	}
+
+	&.no-pad .wp-block-column {
+		padding: 0;
+	}
+}

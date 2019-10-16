@@ -1,0 +1,23 @@
+.archive .format-aside .entry-header,
+.archive .format-aside .entry-bg,
+.archive .format-status .entry-header,
+.archive .format-status .entry-bg,
+.archive .format-status .link-more,
+.archive .format-status .entry-meta,
+.archive .format-status .entry-title,
+.blog .format-aside .entry-header,
+.blog .format-aside .entry-bg,
+.blog .format-status .entry-header,
+.blog .format-status .entry-bg,
+.blog .format-status .link-more,
+.blog .format-status .entry-meta,
+.blog .format-status .entry-title {
+    display: none;
+}
+
+.archive .format-aside,
+.archive .format-status,
+.blog .format-aside,
+.blog .format-status {
+	padding-top: 1em;
+}

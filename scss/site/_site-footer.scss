@@ -1,0 +1,21 @@
+.site-footer {
+	clear: both;
+	width: $size__site-main;
+	background-color: #000;
+}
+
+.site-info {
+	color: $color__base-light;
+	letter-spacing: 1px;
+	padding: 2em 0 .5em;
+	position: relative;
+	@include font-size(.875);
+
+	a {
+		color: $color__base-medium;
+
+		&:hover {
+			color: $color__base-light;
+		}
+	}
+}

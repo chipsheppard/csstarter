@@ -1,0 +1,68 @@
+#bbpress-forums {
+	padding-top: 1em;
+}
+#bbpress-forums,
+#bbpress-forums .bbp-topic-content,
+#bbpress-forums .bbp-reply-content {
+    @include font-size(1);
+}
+
+#bbpress-forums p.bbp-topic-meta img.avatar,
+#bbpress-forums ul.bbp-reply-revision-log img.avatar,
+#bbpress-forums ul.bbp-topic-revision-log img.avatar,
+#bbpress-forums div.bbp-template-notice img.avatar,
+#bbpress-forums .widget_display_topics img.avatar,
+#bbpress-forums .widget_display_replies img.avatar {
+	margin-bottom: -2px;
+	border: 0;
+}
+
+#subscription-toggle {
+	float: right;
+}
+
+.subscription-toggle {
+	background-color: $color__highlight;
+	border-radius: 6px;
+	color:  #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	line-height: normal;
+	margin-bottom: 1em;
+	padding: 1em;
+	position: relative;
+	top: -1em;
+	white-space: normal;
+	width: auto;
+	z-index: 1;
+
+	&:hover {
+		color: #ffffff;
+	}
+
+	&:focus,
+	&:active {
+		outline: 0;
+		border: 0;
+		color: #ffffff;
+	}
+
+	&:after {
+		background-color: rgba(255,255,255,0.3);
+		border-radius: 6px;
+		content: '';
+		position: absolute;
+		z-index: -1;
+		height: 0;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+		transition: all 0.2s ease-in-out;
+	}
+
+	&:hover:after {
+		height: 100%;
+		opacity: 1;
+	}
+}

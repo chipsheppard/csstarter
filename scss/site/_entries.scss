@@ -1,0 +1,94 @@
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.entry-title {
+	margin: 0;
+}
+
+.page-title {
+	margin: 0;
+
+	div {
+		text-transform: uppercase;
+		@include font-size(1);
+	}
+}
+
+.title-wrap {
+	padding: 0;
+	margin-bottom: 1.5em;
+}
+body.blog .hentry .title-wrap,
+body.archive .hentry .title-wrap,
+body.search .title-wrap {
+	margin-bottom: 0;
+}
+
+body.page .entry-title,
+body.single .entry-title,
+body.blog .page-title,
+body.archive .page-title,
+body.search .page-title,
+body.error404 .page-title {
+	letter-spacing: 1px;
+	padding: 0;
+	word-break: break-all;
+
+	@include breakpoint(phone-h) {
+		@include font-size(1.875);
+	}
+}
+
+.entry-content {
+	ol,
+	ul:not(.alignfull):not(.alignwide) {
+		margin-left: 1.5em;
+	}
+
+	ol,
+	ul {
+		margin-bottom: 1.5em;
+
+		li {
+			line-height: 1.4;
+			padding-bottom: .5em;
+		}
+	}
+
+	ol > li {
+		list-style-type: decimal;
+	}
+
+	ul > li {
+		list-style-type: disc;
+	}
+
+	ol ol,
+	ul ul {
+		margin-top: .5em;
+		margin-bottom: 0;
+
+		li:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	dt {
+		font-weight: $font__weight-bold;
+	}
+
+	dd {
+		margin: 0 1em 1em;
+	}
+}
+
+.single {
+	.hentry {
+		margin-bottom: 6em;
+	}
+	.entry-content {
+		margin-bottom: 2em;
+	}
+}

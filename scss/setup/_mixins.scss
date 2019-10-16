@@ -1,0 +1,43 @@
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Media Queries
+// http://gs.statcounter.com/screen-resolution-stats
+@mixin breakpoint($point) {
+
+  @if $point == site-max {
+    @media all and (max-width: 1280px) { @content; } // 1280px and below.
+  }
+  @if $point == tablet-h {
+    @media all and (max-width: 1024px) { @content; } // 1024px and below.
+  }
+  @if $point == tablet-m {
+    @media all and (max-width: 900px) { @content; } // 900px and below.
+  }
+  @if $point == tablet-v {
+    @media all and (max-width: 768px) { @content; } // 768px and below.
+  }
+  @if $point == tablet-min-v {
+    @media all and (min-width: 769px) { @content; } // 769px and above.
+  }
+  @if $point == phone-h {
+    @media all and (max-width: 640px) { @content; } // 640px and below.
+  }
+  @if $point == phone-v {
+    @media all and (max-width: 380px) { @content; } // 380px and below.
+  }
+}
