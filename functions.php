@@ -163,8 +163,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Add Theme support for WooCommerce
  * http://www.wpexplorer.com/woocommerce-compatible-theme/
  */
-define( 'WPEX_WOOCOMMERCE_ACTIVE', class_exists( 'WooCommerce' ) );
+define( 'CSSTARTER_WOOCOMMERCE_ACTIVE', class_exists( 'WooCommerce' ) );
 // Checking if WooCommerce is active.
-if ( WPEX_WOOCOMMERCE_ACTIVE ) {
+if ( CSSTARTER_WOOCOMMERCE_ACTIVE ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }

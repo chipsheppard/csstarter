@@ -1846,18 +1846,6 @@ img.alignright,
   margin-right: 0;
 }
 
-@media (max-width: 780px) and (min-width: 600px) {
-  .wp-block-column {
-    flex-basis: 47%;
-  }
-}
-
-@media (max-width: 780px) {
-  .wp-block-column:nth-child(even) {
-    margin-right: 0;
-  }
-}
-
 @media (min-width: 780px) {
   .wp-block-column:not(:first-child),
   .wp-block-column:nth-child(2n) {
@@ -2303,7 +2291,6 @@ body.headercentered .menu-wrap {
 
 .custom-logo img {
   display: block;
-  max-height: 300px;
   max-width: 300px;
   width: 100%;
   height: auto;
@@ -2313,7 +2300,6 @@ body.headercentered .menu-wrap {
 
 @media all and (max-width: 640px) {
   .custom-logo {
-    max-height: 32px;
     width: auto;
   }
 }

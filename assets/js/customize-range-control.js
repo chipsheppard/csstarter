@@ -1,7 +1,7 @@
 /**
  * Customizer Range slider
  *
- * @package  csstarter
+ * @package  CsStarter
  * @subpackage csstarter/assets/js
  * @since    1.0.0
  */

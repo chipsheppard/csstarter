@@ -221,19 +221,6 @@
 	}
 }
 
-// Transition to 2 columns for all rows
-@media (max-width: 780px) and (min-width: 600px) {
-	.wp-block-column {
-    	flex-basis: 47%;
-	}
-}
-// 2 columns for all rows
-@media (max-width: 780px) {
-	.wp-block-column:nth-child(even) {
-	    margin-right: 0;
-	}
-}
-
 // Override plugin styles to get even edges
 @media (min-width: 780px) {
 	.wp-block-column:not(:first-child),
