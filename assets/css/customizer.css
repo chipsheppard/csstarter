@@ -1,109 +1,62 @@
-span.description {
-	font-style: normal;
-}
-
-/* extra space for the 2 header layout PNGs */
-#customize-control-csstarter_settings-header_layout label {
-	margin-right: .5em;
-}
-
-/* Header Media section ( Background Image/Video ) */
-#customize-control-external_header_video {
-	border-bottom: 1px dashed #bbbbbb;
-	margin-bottom: 24px;
-	padding-bottom: 24px;
-}
-
-/* SECTIONS
+/* ALL SECTIONS
 ----------------------------------------------- */
-#sub-accordion-section-csstarter_themeops .customize-control-radio,
-#sub-accordion-section-csstarter_themeops .customize-control-select,
-#sub-accordion-section-csstarter_themeops .customize-control-textarea,
-#sub-accordion-section-csstarter_themeops .customize-control-range,
-#sub-accordion-section-csstarter_themeops .customize-control-color,
-#sub-accordion-section-csstarter_themeops .customize-control-alpha-color,
-#sub-accordion-section-csstarter_themeops .customize-control-checkbox,
-#sub-accordion-section-csstarter_header_layouts .customize-control-select,
-#sub-accordion-section-csstarter_page_layouts .customize-control-select {
-	padding: 0 12px;
-	background-color: #f3f3f3;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	margin: 0;
+.customize-control-radio,
+.customize-control-select,
+.customize-control-checkbox,
+.customize-control-textarea,
+.customize-control-text,
+.customize-control-range,
+.customize-control-color,
+.customize-control-number,
+.customize-control-alpha-color {
 	box-sizing: border-box;
 }
 
-#sub-accordion-section-csstarter_page_layouts .customize-control-select {
-	padding-bottom: 12px;
+/* All Titles */
+.customize-control-radio .customize-control-title,
+.customize-control-select .customize-control-title,
+.customize-control-textarea .customize-control-title,
+.customize-control-range .customize-control-title,
+.customize-control-color .customize-control-title,
+.customize-control-number .customize-control-title,
+.customize-control-alpha-color .customize-control-title {
+	font-size: 12px;
+	line-height: 1.25;
 }
 
-/* Checkboxes */
-#customize-control-csstarter_settings-meta_date,
+/* Meta Data & Entry Elements Checkboxes */
 #customize-control-csstarter_settings-meta_author,
 #customize-control-csstarter_settings-meta_comments,
-#customize-control-csstarter_settings-meta_updated {
+#customize-control-csstarter_settings-archives_hide_meta,
+#customize-control-csstarter_settings-archives_hide_excerpt,
+#customize-control-csstarter_settings-archives_hide_readmore {
 	margin-bottom: 0;
+	padding-top: 0;
 }
 #customize-control-csstarter_settings-meta_date,
-#customize-control-csstarter_settings-meta_author,
-#customize-control-csstarter_settings-meta_comments {
-	padding-top: 0;
-	padding-bottom: 0;
+#customize-control-csstarter_settings-archives_hide_featuredimage {
+	margin-bottom: 0;
 }
 #customize-control-csstarter_settings-meta_updated {
 	padding-top: 0;
-}
-
-/* TOP Control Blocks
------------------------------------------------ */
-#customize-control-csstarter_settings-home_layout_setting.customize-control-select,
-#customize-control-csstarter_settings-meta_footer.customize-control-checkbox {
-	border-top: 1px solid #ccc;
-	padding-top: 12px;
-}
-
-/* BOTTOM Control Blocks
-------------------------------------------------- */
-#customize-control-csstarter_settings-search_layout_setting.customize-control-select,
-#customize-control-csstarter_settings-meta_updated.customize-control-checkbox {
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 12px;
-}
-
-/* TOP & BOTTOM - Single control
-------------------------------------------------- */
-#customize-control-csstarter_settings-header_layout.customize-control-select {
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-	padding-top: 12px;
-	padding-bottom: 12px;
 }
 
 /* LABELS
 ------------------------------------------------ */
-#sub-accordion-section-csstarter_themeops .customize-control-text,
-#sub-accordion-section-csstarter_header_layouts .customize-control-text {
-	margin-bottom: 0;
-}
-#sub-accordion-section-csstarter_themeops .customize-control-text .customize-control-title,
-#sub-accordion-section-csstarter_header_layouts .customize-control-text .customize-control-title {
-	letter-spacing: 1px;
+#customize-control-themeops-meta-message,
+#customize-control-to-a-elements-message {
+	border-bottom: 3px solid #ddd;
+	margin: 18px 0 12px;
 	text-transform: uppercase;
 }
-
-
-/* INNER HEADING
-------------------------------------------------- */
-#customize-control-themeops-metaheader-message {
-	background-color: #f3f3f3;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
-	margin: 0;
-	box-sizing: border-box;
-}
-#customize-control-themeops-metaheader-message {
-	padding: 0 12px;
-}
-#customize-control-themeops-metaheader-message.customize-control-text {
+#customize-control-themeops-meta-message {
 	margin-top: 0;
+}
+
+/* INNER HEADINGS
+------------------------------------------------- */
+#customize-control-themeops-metafooter-message,
+#customize-control-themeops-metaheader-message {
+	font-weight: bold;
+	margin: 0;
 }

@@ -1,10 +1,7 @@
 .footer-widget {
-	margin-bottom: 1.5em;
+	margin-bottom: 2em;
 	@include font-size(.875);
 
-	.widget-title {
-		margin-bottom: .5rem;
-	}
 	ul {
 		list-style: none;
 		margin: 0;

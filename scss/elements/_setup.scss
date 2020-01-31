@@ -1,6 +1,30 @@
+html {
+	font-size: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-	background: #f3f5f7;
+	background: #ffffff;
 	font-family: $font__main;
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 body,
@@ -20,13 +44,6 @@ p, form, address {
 
 b, strong {
 	font-weight: $font__weight-bold;
-}
-
-img {
-  border-style: none;
-  display: block;
-  height: auto;
-  max-width: 100%;
 }
 
 pre {
@@ -50,28 +67,8 @@ abbr, acronym {
 	cursor: help;
 }
 
-small {
-	font-size: 80%;
-}
-
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-sup {
-	top: -0.5em;
-}
-
 hr {
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.15);
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;

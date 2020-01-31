@@ -12,23 +12,17 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php
-if ( ! is_singular() && ! is_search() && ! has_post_format( 'aside' ) && ! has_post_format( 'status' ) && has_post_thumbnail() ) :
+$csstarter_settings = wp_parse_args(
+	get_option( 'csstarter_settings', array() ),
+	csstarter_get_defaults()
+);
+$csstarter_hide_fi  = $csstarter_settings['archives_hide_featuredimage'];
+
+if ( true !== $csstarter_hide_fi && ! is_singular() && ! has_post_format( 'aside' ) && ! has_post_format( 'status' ) && has_post_thumbnail() ) :
 
 	echo '<a href="' . esc_url( get_permalink() ) . '" class="fi-link">';
 	the_post_thumbnail(
 		'post-thumbnail',
-		array(
-			'class' => 'featured-image',
-			'title' => 'Feature image',
-		)
-	);
-	echo '</a>';
-
-elseif ( is_search() && has_post_thumbnail() ) :
-
-	echo '<a href="' . esc_url( get_permalink() ) . '" class="fi-link">';
-	the_post_thumbnail(
-		'thumbnail',
 		array(
 			'class' => 'featured-image',
 			'title' => 'Feature image',
@@ -61,26 +55,8 @@ echo '</header>';
 
 echo '<div class="entry-content">';
 
-tha_entry_content_before();
-
-if ( is_singular() ) : // single posts, attachments, pages, custom post types.
-
-	the_content();
-
-	wp_link_pages(
-		array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'csstarter' ),
-			'after'  => '</div>',
-		)
-	);
-
-else : // archives & search.
-
-	the_excerpt();
-
-endif;
-
-tha_entry_content_after();
+	tha_entry_content_before();
+	tha_entry_content_after();
 
 echo '</div>';
 

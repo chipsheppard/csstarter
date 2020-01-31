@@ -1,21 +1,83 @@
 .blog,
-.archive {
+.archive,
+.search {
 
-	.hentry {
+	.loop-wrap {
+		display: flex;
+		flex-wrap: wrap;
+
+		article {
+			display: flex;
+			flex-direction: column;
+
+			.entry-content {
+				flex: 1 0 auto;
+			}
+		}
+	}
+
+	article {
 		background-color: #ffffff;
-		margin: 0 0 2em;
-		padding: 0 1.5em;
-		@include font-size(1);
+		border: 1px solid $color__base-xlight;
+		margin-bottom: 2em;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+
+		// 3 COLS - Greater than or equal to 641
+		@include breakpoint(phone-min-h) {
+			float: left;
+			margin-left: 0;
+			width: calc( 48% - 1px );
+
+			&:nth-of-type(odd) {
+				clear: both;
+				margin-right: 4%;
+			}
+		}
+		// 3 COLS - Greater than or equal to 769
+		@include breakpoint(tablet-min-v) {
+			width: calc( 32% - 1px );
+			margin-right: 0;
+			margin-left: 2%;
+
+			&:nth-of-type(odd) {
+				clear: none;
+				margin-right: 0;
+			}
+			&:nth-child(3n+1) {
+				clear: both;
+				margin-left: 0;
+			}
+		}
 
 		.wp-post-image {
 			display: block;
 			width: 100%;
 		}
 
-		.entry-header,
-		.entry-content,
-		.link-more {
+		.entry-header {
 			overflow: hidden;
+			padding: 1rem;
+		}
+
+		.entry-content {
+			overflow: hidden;
+			padding: 0 1rem 1rem;
+		}
+
+		.link-more {
+			line-height: 2.5;
+			margin-bottom: 1rem;
+			overflow: hidden;
+			padding: 0 1rem 0;
+		}
+
+		&.format-aside,
+		&.format-status {
+			.entry-content {
+				padding-top: 16px;
+			}
 		}
 
 		&.sticky {
@@ -23,39 +85,24 @@
 		}
 	}
 
-	.entry-content {
-		p {
-			margin-bottom: .25em;
-		}
-	}
-
 	.format-status .entry-content p {
 		margin-bottom: 1em;
 	}
 
-	.entry-header {
-		padding: 1.5em 0 1em;
-	}
-
 	.entry-title {
-		word-break: break-all;
-		@include font-size(1.375);
+		word-break: break-word;
+		line-height: 1.125;
+		margin-bottom: .25em;
 	}
 }
 
 .fi-link {
-	display: inline-block;
-	margin: 1.5em 1.5em 1.5em 0;
-	max-width: 300px;
 	overflow: hidden;
-	float: left;
+	display: block;
+	width: 100%;
 
 	@include breakpoint(tablet-v) {
 		float:none;
-		margin-bottom: 0;
-		margin-right: 0;
-		max-width: none;
-		width: 100%;
 	}
 }
 
@@ -74,11 +121,11 @@
 
 /* READ MORE LINKS */
 .more-link {
-	display: block;
-	font-weight: $font__weight-bold;
+	border: 1px solid currentColor;
+	display: inline-block;
 	line-height: 1;
-	padding: 2em 0;
+	padding: 1.125em 1.75em 1em;
 	position: relative;
 	text-transform: uppercase;
-	@include font-size(.75);
+	font-size: 75%;
 }

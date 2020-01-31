@@ -5,20 +5,22 @@
 
 	input[type="search"] {
 		display: inline-block;
+		padding-right: 60px;
 	}
 
 	input[type="submit"] {
-		background: transparent;
+		background: #fff;
 		border: none;
 		border-left: 1px solid $color__base-xlight;
 		border-right: 1px solid $color__base-xlight;
 		border-radius: 0;
 		color: $color__base;
 		display: inline-block;
-		padding: .313em .75em .688em;
+		padding: .375em .75em .5625em;
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: 1px;
+		width: 55px;
 		@include font-size(1.25);
 
 		&:hover,

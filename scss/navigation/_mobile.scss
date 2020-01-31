@@ -25,10 +25,10 @@
 
 		a {
 			background-color: #ffffff;
-			color: #222222 !important;
+			color: $color__base !important;
 			display: block;
 			overflow: hidden;
-			padding: 1.25em 1em 1em 1.5em;
+			padding: 1.5rem 0 1.5rem 4%;
 			position: relative;
 			width: 100%;
 		}
@@ -73,20 +73,15 @@
 
 		.dropdown-toggle {
 			border-left: 1px solid rgba(153, 153, 153, 0.25);
-			color: #222222;
+			color: $color__base;
 			cursor: pointer;
 			display: inline-block;
 			margin-left: 0;
-			padding: .6125em 1.75em;
+			padding: .6875rem 1.5rem;
 			position: absolute;
 			right: 0;
 			top: 0;
 			z-index: 2;
-
-			@include breakpoint(phone-v) {
-				padding-left: 1.5em;
-				padding-right: 1.5em;
-			}
 
 			&:hover {
 				background-color: rgba(153, 153, 153, 0.25);
@@ -118,12 +113,12 @@
 
 			a {
 				border: 0;
-				padding-left: 4em;
+				padding-left: 4rem;
 				width: 100%;
 			}
 
 			button.dropdown-toggle {
-				padding: 0 1.375em .425em;
+				padding: 0 1rem .6875rem;
 				right: 0;
 			}
 
@@ -131,7 +126,7 @@
 				margin: 0;
 
 				a {
-					padding-left: 6em;
+					padding-left: 6rem;
 				}
 			}
 		}

@@ -15,8 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Theme data.
 define( 'CSSTARTER_VERSION', '1.0.0' );
 define( 'CSSTARTER_THEME_NAME', 'CsStarter' );
-define( 'CSSTARTER_AUTHOR_NAME', 'Sheppco' );
-define( 'CSSTARTER_AUTHOR_LINK', 'https://sheppco.com' );
+define( 'CSSTARTER_AUTHOR_NAME', 'Chip Sheppard' );
+define( 'CSSTARTER_AUTHOR_LINK', 'https://chipsheppard.com' );
 
 if ( ! function_exists( 'csstarter_setup' ) ) :
 	/**
@@ -44,7 +44,8 @@ if ( ! function_exists( 'csstarter_setup' ) ) :
 		);
 
 		// Switch default core markup to output valid HTML5.
-		add_theme_support( 'html5',
+		add_theme_support(
+			'html5',
 			array(
 				'search-form',
 				'comment-form',
@@ -56,7 +57,8 @@ if ( ! function_exists( 'csstarter_setup' ) ) :
 
 		// WordPress core custom background feature.
 		add_theme_support( 'custom-background',
-			apply_filters( 'csstarter_custom_background_args',
+			apply_filters(
+				'csstarter_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -89,9 +91,7 @@ if ( ! function_exists( 'csstarter_setup' ) ) :
 		add_theme_support( 'post-formats', array( 'aside', 'status' ) );
 
 		// Gutenberg.
-		// -- Responsive embeds.
 		add_theme_support( 'responsive-embeds' );
-		// -- Wide Images.
 		add_theme_support( 'align-wide' );
 
 	}
@@ -121,6 +121,15 @@ function csstarter_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	$csstarter_settings = wp_parse_args(
+		get_option( 'csstarter_settings', array() ),
+		csstarter_get_defaults()
+	);
+	if ( $csstarter_settings['nav_search'] ) {
+		wp_enqueue_script( 'csstarter_navsearch_js', get_template_directory_uri() . '/assets/js/csstarter-navsearch-min.js', array(), CSSTARTER_VERSION, true );
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'csstarter_scripts' );
 
@@ -148,7 +157,6 @@ require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/entry-meta.php';
 require get_template_directory() . '/inc/theme-functions.php';
 require get_template_directory() . '/inc/loop.php';
-require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/customizer/defaults.php';
 require get_template_directory() . '/inc/customizer/customizer-functions.php';
@@ -159,12 +167,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/*
- * Add Theme support for WooCommerce
- * http://www.wpexplorer.com/woocommerce-compatible-theme/
- */
+// WooCommerce?
 define( 'CSSTARTER_WOOCOMMERCE_ACTIVE', class_exists( 'WooCommerce' ) );
-// Checking if WooCommerce is active.
 if ( CSSTARTER_WOOCOMMERCE_ACTIVE ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }

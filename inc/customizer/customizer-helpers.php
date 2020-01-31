@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Controls.
-require_once trailingslashit( dirname( __FILE__ ) ) . 'controls/class-csstarter-alpha-color-control.php';
+// require_once trailingslashit( dirname( __FILE__ ) ) . 'controls/class-csstarter-alpha-color-control.php';.
+// require_once trailingslashit( dirname( __FILE__ ) ) . 'controls/class-csstarter-range-control.php';.
 require_once trailingslashit( dirname( __FILE__ ) ) . 'controls/class-csstarter-radio-image-control.php';
-require_once trailingslashit( dirname( __FILE__ ) ) . 'controls/class-csstarter-range-control.php';
 require_once trailingslashit( dirname( __FILE__ ) ) . 'controls/class-csstarter-content-area.php';
 
 // Color Palette.
@@ -30,11 +30,11 @@ if ( ! function_exists( 'csstarter_get_default_color_palettes' ) ) {
 		$palettes = array(
 			'#000000',
 			'#ffffff',
-			'#b22222', // FireBrick
-			'#ff8c00', // DarkOrange
+			'#b22222', // FireBrick.
+			'#ff8c00', // DarkOrange.
 			'#eee8aa', // PaleGoldenrod.
-			'#008000', // Green
-			'#4169e1', // RoyalBlue
+			'#008000', // Green.
+			'#4169e1', // RoyalBlue.
 			'#9932cc', // DarkOrchid.
 		);
 		return apply_filters( 'csstarter_default_color_palettes', $palettes );

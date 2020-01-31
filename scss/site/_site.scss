@@ -1,10 +1,54 @@
+/*
+ ## 7a. Site Header
+-------------------------------*/
 @import "site-header";
+
+/*
+ ## 7b. Custom Header
+-------------------------------
+@import "custom-header"; */
+
+/*
+ ## 7c. Site footer
+-------------------------------*/
 @import "site-footer";
+
+/*
+ ## 7d. Entries
+-------------------------------*/
 @import "entries";
+
+/*
+ ## 7e. Post formats
+-------------------------------*/
 @import "post-formats";
+
+/*
+ ## 7f. Entry meta
+-------------------------------*/
 @import "entry-meta";
+
+/*
+ ## 7g. The Grid
+-------------------------------*/
 @import "entry-footer";
+
+/*
+ ## 7h. Archives
+-------------------------------*/
 @import "archives";
+
+/*
+ ## 7i. Search
+-------------------------------*/
 @import "search";
+
+/*
+ ## 7j. 404 Error
+-------------------------------*/
 @import "404";
+
+/*
+ ## 7k. Comments
+-------------------------------*/
 @import "comments";

@@ -8,12 +8,12 @@ table {
 th, td {
     line-height: 1.5;
     vertical-align: top;
-    border-top: 1px solid $color__base-xlight;
+    border-top: 1px solid rgba(153,153,153,0.5);
 }
 th {
     padding: 1em;
 	text-align: left;
-	background-color: $color__base-xxlight;
+	background-color: rgba(153,153,153,0.1);
 }
 td {
     padding: 1em;
@@ -31,15 +31,8 @@ thead:first-child tr:first-child td {
     border-top: 0;
 }
 
-tbody + tbody {
-    border-top: 2px solid $color__base-xlight;
-}
-
-.striped tr:nth-child(odd) > td {
-  background: #ffffff;
-}
 .striped tr:nth-child(even) > td {
-  background: $color__base-xxlight;
+	background: rgba(153,153,153,0.05);
 }
 
 .sidebar-widget.widget_calendar {

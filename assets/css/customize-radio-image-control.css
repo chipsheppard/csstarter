@@ -20,14 +20,17 @@
 	-webkit-appearance: none;
 	white-space: nowrap;
 }
+
 #customize-control-csstarter_settings-header_layout .controls label,
 #customize-control-csstarter_settings-content_title_placement .controls label {
 	max-width: 33%;
 }
+
 #customize-control-csstarter_settings-global_width_setting.customize-control .customize-inside-control-row {
 	display: inline-block;
 	margin-right: 1em;
 }
+
 #csstarter-img-container input {
 	position: absolute;
 	bottom: 0;

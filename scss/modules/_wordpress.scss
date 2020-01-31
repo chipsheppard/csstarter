@@ -40,10 +40,10 @@
 .widget_calendar td,
 .widget_calendar th {
 	text-align: center;
+	padding: 1%;
 }
 
-/*
- * Smileys */
+/* Smileys */
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -54,9 +54,7 @@
 }
 
 
-/*
- * Captions */
-
+/* Captions */
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -76,10 +74,7 @@
 	text-align: center;
 }
 
-
-/*
- * Galleries */
-
+/* Galleries */
 .gallery {
 	margin-bottom: 1.5em;
 }
@@ -171,14 +166,12 @@
 	width: 100%;
 }
 
-/*
- * Audio Embeds */
+/* Audio Embeds ???? */
 .mejs-button>button {
 	background-color: transparent !important;
 }
 
-/*
- * Recent Comments Widget */
+/* Recent Comments Widget */
 .sidebar-widget.widget_recent_comments ul a {
 	display: inline;
 }

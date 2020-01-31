@@ -41,10 +41,10 @@ add_filter( 'http_request_args', 'csstarter_dont_update_theme', 5, 2 );
  * Header Meta Tags
  */
 function csstarter_header_meta_tags() {
-	echo '<meta charset="' . esc_html( get_bloginfo( 'charset' ) ) . '">';
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
-	echo '<link rel="profile" href="http://gmpg.org/xfn/11">';
-	echo '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">';
+	echo '<meta charset="' . esc_html( get_bloginfo( 'charset' ) ) . '">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">';
 }
 add_action( 'tha_head_top', 'csstarter_header_meta_tags' );
 
@@ -67,7 +67,7 @@ add_action( 'widgets_init', 'csstarter_remove_recent_comments_style' );
  *
  * @param string $title The title.
  */
-function wrap_archive_title_part( $title ) {
+function csstarter_archive_title_wrap( $title ) {
 	if ( is_category() ) {
 		$title = single_cat_title( '', false );
 	} elseif ( is_tag() ) {
@@ -91,7 +91,7 @@ function wrap_archive_title_part( $title ) {
 	}
 	return $title;
 }
-add_filter( 'get_the_archive_title', 'wrap_archive_title_part' );
+add_filter( 'get_the_archive_title', 'csstarter_archive_title_wrap' );
 
 
 /**

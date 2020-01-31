@@ -9,7 +9,7 @@
 	.widget-area {
 		display: inline-block;
 		overflow: hidden;
-		padding: 3.25em 0 2.5em;
+		padding: 3em 0 2.5em;
 		width: $size__site-sidebar;
 
 		@include breakpoint(tablet-v) {
@@ -31,7 +31,7 @@
 }
 
 
-// Sidebar Content ------------------------------
+// Sidebar Content 
 .sidebar-left {
 
 	.content-area {
@@ -48,7 +48,7 @@
 	}
 }
 
-// Content Sidebar ------------------------------
+// Content Sidebar
 .sidebar-right {
 
 	.content-area {
@@ -61,7 +61,7 @@
 	}
 }
 
-// No Sidebar Silo ------------------------------
+// No Sidebar Silo
 .nosidebar-silo .content-inner-wrap {
 	padding-left: 15%;
 	padding-right: 15%;
@@ -76,7 +76,6 @@
 	}
 }
 
-// Stack sidebars up for smaller devices
 @include breakpoint(tablet-v) {
 	.content-area,
 	.site-content .widget-area,

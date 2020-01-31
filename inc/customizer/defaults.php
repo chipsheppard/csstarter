@@ -21,18 +21,22 @@ if ( ! function_exists( 'csstarter_get_defaults' ) ) {
 	 */
 	function csstarter_get_defaults() {
 		$csstarter_defaults = array(
-			'background_color'       => '#f3f5f7',
-			'header_layout'          => '',
-			'home_layout_setting'    => 'layout-ns',
-			'page_layout_setting'    => 'layout-ns',
-			'single_layout_setting'  => 'layout-ns',
-			'search_layout_setting'  => 'layout-ns',
-			'archive_layout_setting' => 'layout-ns',
-			'meta_date'              => true,
-			'meta_author'            => true,
-			'meta_comments'          => true,
-			'meta_updated'           => true,
-			'meta_footer'            => true,
+			'background_color'            => '#ffffff',
+			'home_layout_setting'         => 'layout-ns',
+			'page_layout_setting'         => 'layout-ns',
+			'single_layout_setting'       => 'layout-ns',
+			'search_layout_setting'       => 'layout-ns',
+			'archive_layout_setting'      => 'layout-ns',
+			'meta_date'                   => true,
+			'meta_author'                 => true,
+			'meta_comments'               => true,
+			'meta_updated'                => true,
+			'meta_footer'                 => true,
+			'archives_hide_featuredimage' => '',
+			'archives_hide_excerpt'       => '',
+			'archives_hide_readmore'      => '',
+			'archives_hide_meta'          => '',
+			'nav_search'                  => '',
 		);
 
 		return apply_filters( 'csstarter_option_defaults', $csstarter_defaults );

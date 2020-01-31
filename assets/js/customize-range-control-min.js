@@ -1,1 +1,0 @@
-jQuery(document).ready(function(t){t("input[data-input-type]").on("input change",function(){var e=t(this).val();t(this).prev(".csstarter-range-value").html(e),t(this).val(e)}),t(".csstarter-reset-slider").on("click",function(){var e,a;a=(e=t(this).closest("label").find("input")).data("reset_value"),e.val(a),e.change()})});

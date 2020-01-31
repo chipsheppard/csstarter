@@ -1,5 +1,24 @@
+/*
+ ## 5a. Alignments
+-------------------------------*/
 @import "alignment";
+
+/*
+ ## 5b. WordPress specific
+-------------------------------*/
 @import "wordpress";
+
+/*
+ ## 5c. Gutenberg (block editor)
+-------------------------------*/
 @import "gutenberg";
+
+/*
+ ## 5d. Utility
+-------------------------------*/
 @import "utility";
+
+/*
+ ## 5e. CSS Icons
+-------------------------------*/
 @import "css-icons";

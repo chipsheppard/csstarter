@@ -89,13 +89,13 @@ function csstarter_comment_count() {
 		return;
 	}
 
-	if ( ! is_single() && ! post_password_required() && comments_open() ) {
+	if ( is_single() || is_archive() || is_home() && ! post_password_required() && comments_open() ) {
 		echo '<span class="comments-link">';
 		comments_popup_link(
 			'',
 			__( '1 comment', 'csstarter' ),
 			__( '% comments', 'csstarter' ),
-			'',
+			'meta-link',
 			''
 		);
 		echo '</span>';
@@ -112,12 +112,17 @@ function csstarter_display_entry_meta() {
 			get_option( 'csstarter_settings', array() ),
 			csstarter_get_defaults()
 		);
-		$meta_date           = $csstarter_settings['meta_date'];
-		$meta_author         = $csstarter_settings['meta_author'];
-		$meta_comments       = $csstarter_settings['meta_comments'];
-		$meta_updated        = $csstarter_settings['meta_updated'];
+		$meta_date          = $csstarter_settings['meta_date'];
+		$meta_author        = $csstarter_settings['meta_author'];
+		$meta_comments      = $csstarter_settings['meta_comments'];
+		$meta_updated       = $csstarter_settings['meta_updated'];
+		$hide_m             = $csstarter_settings['archives_hide_meta'];
 
 		if ( true !== $meta_date && true !== $meta_author && true !== $meta_comments && true !== $meta_updated ) {
+			return;
+		}
+
+		if ( true === $hide_m && ( is_archive() || is_home() || is_search() ) ) {
 			return;
 		}
 

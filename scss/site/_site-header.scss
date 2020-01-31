@@ -1,4 +1,5 @@
 .site-header {
+	border-bottom: 1px solid $color__base-xlight;
 	position: relative;
 	width: 100%;
 
@@ -8,16 +9,14 @@
 }
 
 .header-wrap {
-	background-color: #ffffff;
 	position: relative;
 	z-index: 100;
+	padding: 1rem 0;
 }
 
-// BRANDING BLOCK
 .site-branding {
 	display: table-cell;
 	text-align: left;
-	padding: 1em 0;
 	vertical-align: middle;
 	transition: all .5s ease;
 
@@ -26,19 +25,16 @@
 		width: 88%;
 	}
 
-	@include breakpoint(phone-h) {
-		padding: .75em 0;
-	}
-
 	a {
 		display: inline-block;
 		line-height: 1;
 	}
 }
 
-// Image logo
 .custom-logo {
+	display: table-cell;
 	line-height: 1;
+	padding-right: 1rem;
 
 	img {
 		display: block;
@@ -48,24 +44,19 @@
 		transition: max-height 0.2s;
 	}
 
-	@include breakpoint(phone-h) {
-		width: auto;
-	}
-
 	a:hover {
 		opacity: 0.75;
 	}
 }
 
-// Site Title (text logo)
 .site-title {
-	color: #000000;
+	color: #222222;
 	line-height: 1;
 	margin-bottom: 0;
 	@include font-size(3);
 
 	a {
-		color: #000000;
+		color: #222222;
 		display:inline-block;
 		text-decoration: none;
 
@@ -80,9 +71,8 @@
 	}
 }
 
-// Description
 .site-description {
-	color: #000000;
+	color: #222222;
 	letter-spacing: 1px;
 	line-height: 1;
 	padding-top: .5em;

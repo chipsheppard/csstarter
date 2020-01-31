@@ -19,25 +19,31 @@
 // http://gs.statcounter.com/screen-resolution-stats
 @mixin breakpoint($point) {
 
-  @if $point == site-max {
-    @media all and (max-width: 1280px) { @content; } // 1280px and below.
-  }
-  @if $point == tablet-h {
-    @media all and (max-width: 1024px) { @content; } // 1024px and below.
-  }
-  @if $point == tablet-m {
-    @media all and (max-width: 900px) { @content; } // 900px and below.
-  }
-  @if $point == tablet-v {
-    @media all and (max-width: 768px) { @content; } // 768px and below.
-  }
-  @if $point == tablet-min-v {
-    @media all and (min-width: 769px) { @content; } // 769px and above.
-  }
-  @if $point == phone-h {
-    @media all and (max-width: 640px) { @content; } // 640px and below.
-  }
-  @if $point == phone-v {
-    @media all and (max-width: 380px) { @content; } // 380px and below.
-  }
+	@if $point == site-max {
+		@media all and (max-width: 1280px) { @content; }
+	}
+	@if $point == tablet-h {
+		@media all and (max-width: 1024px) { @content; }
+	}
+	@if $point == tablet-m {
+		@media all and (max-width: 900px) { @content; }
+	}
+	@if $point == tablet-v {
+		@media all and (max-width: 768px) { @content; } // device is less than or equal to... apply styles
+	}
+	@if $point == tablet-min-v {
+		@media all and (min-width: 769px) { @content; } // device is greater than or equal to... apply styles
+	}
+	@if $point == phone-h {
+		@media all and (max-width: 640px) { @content; }
+	}
+	@if $point == phone-min-h {
+		@media all and (min-width: 641px) { @content; }
+	}
+	@if $point == phone-v {
+		@media all and (max-width: 380px) { @content; }
+	}
+	@if $point == phone-min-v {
+		@media all and (min-width: 381px) { @content; }
+	}
 }

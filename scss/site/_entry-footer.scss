@@ -3,12 +3,19 @@
 	border-bottom: 1px dashed $color__base-xlight;
 	color: $color__base-light;
 	padding: .5em 0;
-	@include font-size(.75);
+
+	a {
+		color: $color__base-medium;
+
+		&:hover {
+			color: currentColor;
+			opacity: .75;
+		}
+	}
 }
 
 .cat-links,
 .tags-links {
-	color: $color__base-light;
 	display: inline;
 	margin-right: .75em;
 	padding:5px 10px 5px 0;

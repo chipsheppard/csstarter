@@ -10,8 +10,33 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	exit;
 }
+
+
+/*
+ * DISPLAY Header
+ * -----------------------------------------------------------------
+ */
+if ( ! function_exists( 'csstarter_display_header' ) ) {
+	/**
+	 * Get the branding markup
+	 */
+	function csstarter_display_header() {
+		echo '<header id="masthead" class="site-header">';
+		csstarter_header_before_wrap();
+		echo '<div class="header-wrap">';
+		echo '<div class="inner-wrap">';
+			tha_header_top();
+			tha_header_bottom();
+		echo '</div>';
+		echo '</div>';
+		csstarter_header_after_wrap();
+		echo '</header>';
+	}
+}
+add_action( 'tha_header_before', 'csstarter_display_header' );
+
 
 /*
  * DISPLAY Branding
@@ -90,7 +115,86 @@ add_action( 'tha_header_top', 'csstarter_display_nav' );
 
 
 /*
- * DISPLAY Entry Footer
+ * DISPLAY The Content
+ * -----------------------------------------------------------------
+ */
+if ( ! function_exists( 'csstarter_display_content' ) ) {
+	/**
+	 * The Content & pagination on pages /  The Excerpt on archives.
+	 */
+	function csstarter_display_content() {
+
+		if ( is_singular() ) :
+			// Single posts, attachments, pages, custom post types.
+			the_content();
+
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'csstarter' ),
+					'after'  => '</div>',
+				)
+			);
+
+		else :
+
+			$csstarter_settings = wp_parse_args(
+				get_option( 'csstarter_settings', array() ),
+				csstarter_get_defaults()
+			);
+			$hide_ex            = $csstarter_settings['archives_hide_excerpt'];
+
+			// Archives & search.
+			if ( true === $hide_ex ) {
+				return;
+			}
+
+			the_excerpt();
+
+		endif;
+	}
+}
+add_action( 'tha_entry_content_before', 'csstarter_display_content' );
+
+
+/*
+ * DISPLAY Read More link
+ * -----------------------------------------------------------------
+ */
+if ( ! function_exists( 'csstarter_display_read_more' ) ) {
+	/**
+	 * The Read More link markup
+	 */
+	function csstarter_display_read_more() {
+		$csstarter_settings = wp_parse_args(
+			get_option( 'csstarter_settings', array() ),
+			csstarter_get_defaults()
+		);
+		$hide_rm            = $csstarter_settings['archives_hide_readmore'];
+
+		if ( true === $hide_rm ) {
+			return;
+		}
+
+		if ( is_archive() || is_home() || is_search() ) :
+			$link = sprintf(
+				'<footer class="link-more"><a href="%1$s" class="more-link">%2$s</a></footer>',
+				get_permalink( get_the_ID() ),
+				sprintf(
+					/* translators: %s: Name of current post */
+					__( 'Continue<span class="screen-reader-text"> "%s"</span>', 'csstarter' ),
+					get_the_title( get_the_ID() )
+				)
+			);
+			echo wp_kses_post( $link );
+			echo '<div class="cf"></div>';
+		endif;
+	}
+}
+add_action( 'tha_entry_bottom', 'csstarter_display_read_more' );
+
+
+/*
+ * DISPLAY Entry Footer Meta
  * -----------------------------------------------------------------
  */
 if ( ! function_exists( 'csstarter_display_entry_footer' ) ) {
@@ -103,7 +207,7 @@ if ( ! function_exists( 'csstarter_display_entry_footer' ) ) {
 			get_option( 'csstarter_settings', array() ),
 			csstarter_get_defaults()
 		);
-		$meta_footer = $csstarter_settings['meta_footer'];
+		$meta_footer        = $csstarter_settings['meta_footer'];
 
 		if ( true === $meta_footer && is_single() && 'post' === get_post_type() ) :
 			echo '<footer class="entry-footer">';
@@ -147,33 +251,6 @@ add_action( 'tha_entry_bottom', 'csstarter_display_entry_footer' );
 
 
 /*
- * DISPLAY Read More link
- * -----------------------------------------------------------------
- */
-if ( ! function_exists( 'csstarter_display_read_more' ) ) {
-	/**
-	 * The Read More link markup
-	 */
-	function csstarter_display_read_more() {
-		if ( is_archive() || is_home() || is_search() ) :
-			$link = sprintf(
-				'<footer class="link-more"><a href="%1$s" class="more-link arrow">%2$s</a></footer>',
-				get_permalink( get_the_ID() ),
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Read more<span class="screen-reader-text"> "%s"</span>', 'csstarter' ),
-					get_the_title( get_the_ID() )
-				)
-			);
-			echo wp_kses_post( $link );
-			echo '<div class="cf"></div>';
-		endif;
-	}
-}
-add_action( 'tha_entry_bottom', 'csstarter_display_read_more' );
-
-
-/*
  * DISPLAY Site Footer
  * -----------------------------------------------------------------
  */
@@ -182,15 +259,35 @@ if ( ! function_exists( 'csstarter_display_site_footer' ) ) {
 	 * The Site Footer MArkup
 	 */
 	function csstarter_display_site_footer() {
+		echo '<footer id="colophon" class="site-footer" role="contentinfo">';
+		echo '<div class="inner-wrap">';
+
+		tha_footer_top();
+
 		if ( is_active_sidebar( 'footer' ) ) {
 			echo '<div class="site-info">';
-				dynamic_sidebar( 'footer' );
+			dynamic_sidebar( 'footer' );
+			do_action( 'csstarter_inside_footer' );
 			echo '</div>';
 		} else {
 			echo '<div class="site-info">';
-				echo '<p>"' . esc_html( CSSTARTER_THEME_NAME ) . '" by <a href="' . esc_html( CSSTARTER_AUTHOR_LINK ) . '">' . esc_html( CSSTARTER_AUTHOR_NAME ) . '</a></p>';
+			?>
+			<p><a href="<?php echo esc_url( __( 'https://osixthreeo.com/', 'csstarter' ) ); ?>">
+				<?php
+				/* translators: %s: theme name. */
+				printf( esc_html__( 'Powered by %s', 'csstarter' ), 'CsStarter' );
+				?>
+			</a></p>
+			<?php
+			do_action( 'csstarter_inside_footer' );
 			echo '</div>';
 		}
+
+		tha_footer_bottom();
+
+		echo '</div>';
+		echo '</footer>';
+
 	}
 }
-add_action( 'tha_footer_top', 'csstarter_display_site_footer' );
+add_action( 'tha_footer_before', 'csstarter_display_site_footer' );

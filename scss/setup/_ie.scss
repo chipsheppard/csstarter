@@ -1,0 +1,5 @@
+// for Windows 8.1
+// enables media queries when IE is "snapped" to the desktop
+@-ms-viewport {
+	width: device-width;
+}

@@ -1,5 +1,22 @@
 @import "mixins";
 @import "variables";
-@import "reset";
+
+/*
+ ## 1a. CSS Reset
+-------------------------------*/
+@import "normalize";
+
+/*
+ ## 1b. Clearing
+-------------------------------*/
 @import "clearings";
+
+/*
+ ## 1c. Accessibility
+-------------------------------*/
 @import "accessibility";
+
+/*
+ ## 1d. IE \o/
+-------------------------------*/
+@import "ie";

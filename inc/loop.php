@@ -35,11 +35,11 @@ function csstarter_default_loop() {
 
 		tha_content_while_after();
 
-	else :
+		else :
 
-		tha_entry_before();
-		get_template_part( 'template-parts/content', 'none' );
-		tha_entry_after();
+			tha_entry_before();
+			get_template_part( 'template-parts/content', 'none' );
+			tha_entry_after();
 
 	endif;
 }
@@ -52,7 +52,7 @@ add_action( 'tha_content_loop', 'csstarter_default_loop' );
 function csstarter_archive_page_titles() {
 	if ( is_home() && ! is_front_page() || is_archive() || is_search() ) :
 		echo '<header class="page-header">';
-		echo '<div class="inner-wrap title-wrap">';
+		echo '<div class="title-wrap">';
 
 		if ( is_search() ) :
 			echo '<h1 class="page-title">';

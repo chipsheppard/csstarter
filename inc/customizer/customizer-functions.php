@@ -125,31 +125,3 @@ function csstarter_get_right_sidebar() {
 	get_sidebar();
 }
 add_action( 'tha_content_after', 'csstarter_get_right_sidebar' );
-
-
-/**
- * HEADER LAYOUT
- * -----------------------------------------------------------------
- * Adds custom class to section containers.
- */
-function csstarter_header_layout_class() {
-
-	$csstarter_settings = wp_parse_args(
-		get_option( 'csstarter_settings', array() ),
-		csstarter_get_defaults()
-	);
-
-	$header_layout = $csstarter_settings['header_layout'];
-
-	if ( 'headercentered' === $header_layout ) {
-		add_filter(
-			'body_class',
-			function( $classes ) {
-				return array_merge( $classes, array( 'headercentered' ) );
-			}
-		);
-	} else {
-		return;
-	}
-}
-add_action( 'csstarter_init', 'csstarter_header_layout_class' );

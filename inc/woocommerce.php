@@ -8,8 +8,6 @@
  * @since    1.0.0
  * @license  GPL-2.0+
  * @link https://docs.woocommerce.com/document/woocommerce-theme-developer-handbook/
- * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
- * @link http://www.wpexplorer.com/woocommerce-compatible-theme/
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,7 +25,7 @@ function csstarter_is_shop() {
 	}
 }
 /**
- * Is this the Shop page?
+ * Is this a Product page?
  */
 function csstarter_is_prod() {
 	if ( CSSTARTER_WOOCOMMERCE_ACTIVE && is_product() ) {
@@ -63,7 +61,6 @@ function csstarter_woocommerce_products_per_page() {
 }
 add_filter( 'loop_shop_per_page', 'csstarter_woocommerce_products_per_page' );
 
-
 /**
  * Product gallery thumnbail columns.
  *
@@ -74,7 +71,6 @@ function csstarter_woocommerce_thumbnail_columns() {
 }
 add_filter( 'woocommerce_product_thumbnails_columns', 'csstarter_woocommerce_thumbnail_columns' );
 
-
 /**
  * Default loop columns on product archives.
  *
@@ -84,7 +80,6 @@ function csstarter_woocommerce_loop_columns() {
 	return 3;
 }
 add_filter( 'loop_shop_columns', 'csstarter_woocommerce_loop_columns' );
-
 
 /**
  * Related Products Args.
@@ -127,14 +122,15 @@ if ( ! function_exists( 'csstarter_woocommerce_product_columns_wrapper_close' ) 
 }
 add_action( 'woocommerce_after_shop_loop', 'csstarter_woocommerce_product_columns_wrapper_close', 40 );
 
-
+// Remove their wrapper then add our own.
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 add_action( 'woocommerce_before_main_content', 'csstarter_theme_wrapper_start', 10 );
 add_action( 'woocommerce_after_main_content', 'csstarter_theme_wrapper_end', 10 );
 
+// Since we are using Woo templates in OsixthreeO territory
+// we need to include our Global functions.
 do_action( 'csstarter_init' );
-
 
 /**
  * The opening wrapper.
@@ -163,7 +159,7 @@ function csstarter_theme_wrapper_end() {
  *
  * @link https://www.kadencethemes.com/support-forums/topic/woocommerce-single-product-move-title-above-page-and-make-fullwidth/
  */
-function csstarter_remove_woocommerce_sidebar() {
+function csstarter_remove_wc_sidebar() {
 	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 }
-add_action( 'init', 'csstarter_remove_woocommerce_sidebar' );
+add_action( 'init', 'csstarter_remove_wc_sidebar' );

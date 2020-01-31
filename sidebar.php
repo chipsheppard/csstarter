@@ -1,6 +1,6 @@
 <?php
 /**
- * The main sidebar - posts, post types, archives.
+ * The main sidebar.
  *
  * @package  CsStarter
  * @author   Chip Sheppard

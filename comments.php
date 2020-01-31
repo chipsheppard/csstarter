@@ -2,11 +2,6 @@
 /**
  * The template for displaying comments.
  *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
  * @package  CsStarter
  * @author   Chip Sheppard
  * @since    1.0.0
@@ -44,7 +39,7 @@ if ( have_comments() ) :
 		echo '</div>';
 		echo '</nav>';
 
-	endif; // Check for comment navigation.
+	endif;
 
 	echo '<ol class="comment-list">';
 		wp_list_comments(
@@ -67,9 +62,9 @@ if ( have_comments() ) :
 			echo '</div>';
 		echo '</div>';
 		echo '</nav>';
-	endif; // Check for comment navigation.
+	endif;
 
-endif; // Check for have_comments().
+endif;
 
 
 // If comments are closed and there are comments, let's leave a little note, shall we?

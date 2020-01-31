@@ -9,15 +9,30 @@ q:after {
 }
 
 blockquote {
-	background: #ffffff;
-	box-shadow: 0px 0px 4px $color__base-xlight;
-	margin: .75em 1.5em 1.5em 0;
-	padding: 1.5em 2em;
+	background: rgba(153,153,153,0.05);
+	margin: .75em 0 1.5em;
+	padding: 1.5em 1.75em;
 	position: relative;
 	quotes: "\201C""\201D""\201C""\201D";
 
 	@include breakpoint(phone-h) {
-		padding: 1.25em 1.375em;
+		padding: 1.25em;
+	}
+
+	&:after {
+		content: '';
+	}
+
+	&:before {
+		background-color: rgba(153,153,153,0.2);
+		content:'';
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 8px;
 	}
 
 	cite {

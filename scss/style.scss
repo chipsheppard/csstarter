@@ -1,68 +1,126 @@
 /*!
-Theme Name: CsStarter
-Theme URI: https://sheppco.com/themes
-Author: Chip Sheppard
-Author URI: https://chipsheppard.com
-Description: Based on _s (underscores.me), flexibility via simplicity.
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: csstarter
-Tags: translation-ready, theme-options, full-width-template, footer-widgets, featured-images, custom-logo, custom-background, flexible-header, grid-layout
+    Theme Name: CsStarter
+    Text Domain: csstarter
+    Version: 1.0.0
+    Description: Based on _s (underscores.me), flexibility via simplicity.
+    Tags: translation-ready, theme-options, full-width-template, footer-widgets, featured-images, custom-logo, custom-background, flexible-header, grid-layout
+    Author: Chip Sheppard
+    Author URI: https://chipsheppard.com
+    Theme URI: https://3rwd.com/
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+    This theme, like WordPress, is licensed under the GPL.
+    Use it to make something cool, have fun, and share what you've learned with others.
 
-Basis is based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
+    Basis is based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc.
+    Underscores is distributed under the terms of the GNU GPL v2 or later.
 
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+	Normalizing styles are thanks to the fine work of Nicolas Gallagher and Jonathan Neal
+	http://necolas.github.com/normalize.css/ | v8.0.0
 */
 
 /*-------------------------------------------------------------
---------------------------------------------------------------*/
 
+1. 	Setup
+    a. 	Normalize
+    b. 	Clearings
+    c. 	Accessibility
+    d.	IE
+2. 	Elements
+    a. 	Initial setup
+    b. 	Headings
+    c. 	Blockquotes
+    d.	Tables
+    e.	Base font
+3. 	Forms
+    a. 	Buttons
+    b. 	Fields
+    c. 	Search
+4. 	Navigation
+    a. 	Links
+    b. 	Menu
+    c. 	Mobile menu icon
+    d. 	Mobile menu
+    e. 	Post navigation
+    f. 	Pagination
+5. 	Modules
+    a. 	Alignments
+    b. 	WordPress specific
+    c. 	Gutenberg (block editor)
+    d. 	Utility
+    e. 	CSS Icons
+6. 	Layout
+    a. 	Containers
+    b. 	The Grid
+7. 	Site Content
+    a. 	site-header
+    b. 	custom-header
+    c. 	site-footer
+    d. 	entries
+    e. 	post-formats
+    f. 	entry-meta
+    g. 	entry-footer
+    h. 	archives
+    i. 	search
+    j. 	404
+    k. 	comments
+8. 	Widgets
+    a. 	Sidebar widgets
+    b. 	Footer widgets
+9.  Infinite Scroll
+10. Plugins
+    a. 	Jetpack
+    b. 	Woo Commerce
+    c. 	BBPress
+    d.  Contact Form 7
+
+---------------------------------
+#  1. Setup
+-------------------------------*/
 @import "setup/setup";
 
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-
+/*-------------------------------
+#  2. Elements
+-------------------------------*/
 @import "elements/elements";
 
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
+/*-------------------------------
+#  3. Forms
+-------------------------------*/
 @import "forms/forms";
 
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
+/*-------------------------------
+#  4. Navigation
+-------------------------------*/
 @import "navigation/navigation";
 
-/*--------------------------------------------------------------
-# Modules
---------------------------------------------------------------*/
+/*-------------------------------
+#  5. Modules
+-------------------------------*/
 @import "modules/modules";
 
-/*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
+/*-------------------------------
+#  6. Layout
+-------------------------------*/
 @import "layout/layout";
 
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
+/*-------------------------------
+#  7. Site Content
+-------------------------------*/
 @import "site/site";
+
+/*-------------------------------
+#  8. Widgets
+-------------------------------*/
 @import "widgets/widgets";
 
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
+/*-------------------------------
+#  9. Infinite scroll
+-------------------------------*/
 @import "modules/infinite-scroll";
 
-/*--------------------------------------------------------------
-# Plugins
---------------------------------------------------------------*/
+/*-------------------------------
+#  10. Plugins
+-------------------------------*/
 @import "plugins/plugins";

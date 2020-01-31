@@ -1,6 +1,5 @@
 // Shop page title
-.woocommerce-products-header,
-.product_title.entry-title {
+.woocommerce-products-header {
 	margin-bottom: 1em;
 }
 
@@ -16,7 +15,7 @@
 .woocommerce #respond input#submit,
 .woocommerce a.button,
 .woocommerce button.button,
-.woocommerce input.button{
+.woocommerce input.button {
 	background-color: $color__highlight;
 	color: #ffffff;
 	border: 0;
@@ -44,6 +43,27 @@
 	padding-top: 1.125em;
 }
 
+.woocommerce a.button {
+	&:after {
+		background-color: rgba(0,0,0,0.2);
+		border-radius: 6px;
+		content: '';
+		position: absolute;
+		z-index: -1;
+		height: 0;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+		transition: all 0.15s ease-in-out;
+	}
+
+	&:hover:after {
+		height: 100%;
+		opacity: 1;
+	}
+}
+
 // ln. 696
 .woocommerce #respond input#submit.alt,
 .woocommerce a.button.alt,
@@ -65,4 +85,20 @@
 .woocommerce .products ul li,
 .woocommerce ul.products li {
     text-align: center;
+}
+
+.woocommerce-page #content table.cart td.actions .input-text,
+.woocommerce-page table.cart td.actions .input-text {
+    width: 120px;
+}
+
+#add_payment_method #payment ul.payment_methods li,
+.woocommerce-cart #payment ul.payment_methods li,
+.woocommerce-checkout #payment ul.payment_methods li {
+	list-style: none;
+}
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment {
+	background:rgba(204, 153, 255, 0.1);
 }

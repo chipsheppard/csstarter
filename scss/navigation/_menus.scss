@@ -9,7 +9,7 @@
 	}
 
 	ul {
-		line-height: 1;
+		line-height: 0;
 
 		ul {
 			display: block;
@@ -29,10 +29,11 @@
 	}
 
 	a {
-		color: $color__base;
+		color: $color__menu;
 		display: inline-block;
 		letter-spacing: 1px;
-		padding: .9375em .25em;
+		padding: 1.5rem .25rem 1.25rem;
+		position:relative;
 
 		&:before {
 			border-bottom: 1px solid currentColor;
@@ -53,14 +54,13 @@
 	.current-menu-ancestor > a:before,
 	.current_page_item > a:before,
 	.current-menu-item > a:before {
-		opacity: .85;
+		opacity: .5;
 		width: 100%;
 	}
 
 	.menu-item-has-children > a {
-		padding-right: 1em;
+		padding-right: 1.5em;
 	}
-
 
 	// sub-menu
 	.sub-menu {
@@ -77,9 +77,10 @@
 
 		a {
 			background:#ffffff;
+			border: 0;
 			color: $color__base;
-			line-height: 1.25;
-			padding: .75em 1.125em;
+			line-height: 1;
+			padding: .75rem 1.125rem;
 			text-transform: none;
 			transition: all .05s ease-in-out;
 			width: 190px;
@@ -122,8 +123,8 @@ button.dropdown-toggle {
 	color: $color__base;
 	padding: 0;
     position: relative;
-	right: .5em;
-	z-index: 1;
+	right: .5rem;
+	z-index: -1;
 }
 
 button.dropdown-toggle:after {
@@ -152,4 +153,10 @@ button.dropdown-toggle.toggled-on:after {
 	right: 8px;
 	top: 0;
 	z-index: 1;
+}
+.sub-menu button.dropdown-toggle:after {
+	top: 2px;
+}
+.sub-menu button.dropdown-toggle.toggled-on:after {
+	top: 4px;
 }

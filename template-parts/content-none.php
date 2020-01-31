@@ -11,9 +11,18 @@
 
 echo '<section class="no-results not-found">';
 echo '<header class="page-header">';
-	echo '<div class="inner-wrap title-wrap">';
-		echo '<h1 class="page-title">' . esc_html__( 'Nothing Found', 'csstarter' ) . '</h1>';
-	echo '</div>';
+echo '<div class="title-wrap">';
+
+if ( is_search() ) :
+	echo '<h1 class="page-title">';
+	/* translators: %$2s: is the search term */
+	printf( '<span>' . esc_html__( 'Search Results for:%1$s %2$s', 'csstarter' ), '</span>', get_search_query() );
+	echo '</h1>';
+else :
+	echo '<h1 class="page-title">' . esc_html__( 'Nothing Found', 'csstarter' ) . '</h1>';
+endif;
+
+echo '</div>';
 echo '</header>';
 
 echo '<div class="page-content">';

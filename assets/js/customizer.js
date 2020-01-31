@@ -41,16 +41,4 @@
 		} );
 	} );
 
-	// HEADER LAYOUT.
-	wp.customize( 'csstarter_settings[header_layout]', function( value ) {
-		value.bind( function( newval ) {
-			if ( 'headernormal' === newval ) {
-				$( 'body' ).removeClass( 'headercentered' );
-			}
-			if ( 'headercentered' === newval ) {
-				$( 'body' ).addClass( 'headercentered' );
-			}
-		} );
-	} );
-
 } )( jQuery );
