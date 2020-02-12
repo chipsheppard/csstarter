@@ -117,7 +117,7 @@ add_action( 'after_setup_theme', 'csstarter_content_width', 0 );
 function csstarter_scripts() {
 	wp_enqueue_style( 'csstarter-style', get_stylesheet_uri(), array(), CSSTARTER_VERSION );
 	wp_enqueue_script( 'csstarter-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), CSSTARTER_VERSION, true );
-	wp_enqueue_script( 'csstarter-globaljs', get_template_directory_uri() . '/assets/js/global.js', array( 'jquery' ), CSSTARTER_VERSION, true );
+	wp_enqueue_script( 'csstarter-globaljs', get_template_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), CSSTARTER_VERSION, true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -137,7 +137,7 @@ add_action( 'wp_enqueue_scripts', 'csstarter_scripts' );
  * Enqueue editor styles for the customizer
  */
 function csstarter_customizer_custom_css() {
-	wp_enqueue_style( 'customizer-css', get_stylesheet_directory_uri() . '/assets/css/customizer.css', array(), CSSTARTER_VERSION );
+	wp_enqueue_style( 'customizer-css', get_template_directory_uri() . '/assets/css/customizer-min.css', array(), CSSTARTER_VERSION );
 }
 add_action( 'customize_controls_enqueue_scripts', 'csstarter_customizer_custom_css' );
 
@@ -145,7 +145,7 @@ add_action( 'customize_controls_enqueue_scripts', 'csstarter_customizer_custom_c
  * Enqueue editor styles for Gutenberg
  */
 function csstarter_gutenberg_editor_styles() {
-	wp_enqueue_style( 'csstarter_gutenberg-editor-style', get_template_directory_uri() . '/assets/css/editor-style.css', array(), CSSTARTER_VERSION );
+	wp_enqueue_style( 'csstarter_gutenberg-editor-style', get_template_directory_uri() . '/assets/css/editor-style-min.css', array(), CSSTARTER_VERSION );
 }
 add_action( 'enqueue_block_editor_assets', 'csstarter_gutenberg_editor_styles' );
 

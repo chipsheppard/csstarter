@@ -3,8 +3,8 @@
  *
  * @since      1.4.0
  *
- * @package    osixthreeo
- * @subpackage osixthreeo/assets/js
+ * @package    csstarter
+ * @subpackage csstarter/assets/js
  */
 
 ( function() {

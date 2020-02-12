@@ -83,14 +83,14 @@ class Csstarter_Radio_Image_Control extends WP_Customize_Control {
 	public function enqueue() {
 		wp_enqueue_script(
 			'csstarter-radio-image-control-js',
-			get_template_directory_uri() . '/assets/js/customize-radio-image-control.js',
+			get_template_directory_uri() . '/assets/js/customize-radio-image-control-min.js',
 			array( 'jquery' ),
 			CSSTARTER_VERSION,
 			true
 		);
 		wp_enqueue_style(
 			'csstarter-radio-image-control-css',
-			get_template_directory_uri() . '/assets/css/customize-radio-image-control.css',
+			get_template_directory_uri() . '/assets/css/customize-radio-image-control-min.css',
 			array(),
 			CSSTARTER_VERSION
 		);

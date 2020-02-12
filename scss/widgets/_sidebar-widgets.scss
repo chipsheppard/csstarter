@@ -3,15 +3,11 @@
 	margin-bottom: 1em;
 	@include font-size(.9375);
 
-	&:last-of-type {
-		border: none;
-	}
-
 	.widget-title {
 		border-bottom: 1px solid $color__base-light;
 		line-height: 1;
 		margin: 0 0 .5em 0;
-		padding: .625em .25em;
+		padding: .125em 0 .5em;
 	}
 
 	select {
@@ -41,7 +37,6 @@
 		a {
 			color: $color__base;
 			display: inline-block;
-			text-transform: uppercase;
 
 			&:hover {
 				color: $color__highlight;
@@ -86,5 +81,9 @@
 	.menu-item-has-children.current-menu-item > a,
 	.menu-item-has-children.current-menu-ancestor > a{
 		padding-bottom: .5em;
+	}
+
+	.search-form {
+		margin-bottom: 0;
 	}
 }
