@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Theme data.
-define( 'CSSTARTER_VERSION', '1.0.0' );
+define( 'CSSTARTER_VERSION', '1.0.1' );
 define( 'CSSTARTER_THEME_NAME', 'CsStarter' );
 define( 'CSSTARTER_AUTHOR_NAME', 'Chip Sheppard' );
 define( 'CSSTARTER_AUTHOR_LINK', 'https://chipsheppard.com' );
@@ -56,7 +56,8 @@ if ( ! function_exists( 'csstarter_setup' ) ) :
 		);
 
 		// WordPress core custom background feature.
-		add_theme_support( 'custom-background',
+		add_theme_support(
+			'custom-background',
 			apply_filters(
 				'csstarter_custom_background_args',
 				array(
@@ -73,7 +74,7 @@ if ( ! function_exists( 'csstarter_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 40,
+				'height'      => 100,
 				'width'       => 200,
 				'flex-height' => true,
 				'flex-width'  => true,
@@ -82,7 +83,7 @@ if ( ! function_exists( 'csstarter_setup' ) ) :
 
 		// Theme styles for the visual editor.
 		add_theme_support( 'editor-styles' );
-		add_editor_style( 'assets/css/editor-style.css' );
+		add_editor_style( 'assets/css/editor-style-min.css' );
 
 		// Body open hook.
 		add_theme_support( 'body-open' );
@@ -141,17 +142,8 @@ function csstarter_customizer_custom_css() {
 }
 add_action( 'customize_controls_enqueue_scripts', 'csstarter_customizer_custom_css' );
 
-/**
- * Enqueue editor styles for Gutenberg
- */
-function csstarter_gutenberg_editor_styles() {
-	wp_enqueue_style( 'csstarter_gutenberg-editor-style', get_template_directory_uri() . '/assets/css/editor-style-min.css', array(), CSSTARTER_VERSION );
-}
-add_action( 'enqueue_block_editor_assets', 'csstarter_gutenberg_editor_styles' );
-
-
 // Load all the things.
-require get_template_directory() . '/inc/tha-theme-hooks.php';
+require get_template_directory() . '/inc/theme-hooks.php';
 require get_template_directory() . '/inc/wordpress-cleanup.php';
 require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/entry-meta.php';

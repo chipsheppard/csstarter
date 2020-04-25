@@ -46,7 +46,7 @@ function csstarter_header_meta_tags() {
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">';
 }
-add_action( 'tha_head_top', 'csstarter_header_meta_tags' );
+add_action( 'csstarter_head_top', 'csstarter_header_meta_tags' );
 
 
 /**

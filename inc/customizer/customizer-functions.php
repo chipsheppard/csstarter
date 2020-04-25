@@ -111,7 +111,7 @@ function csstarter_get_left_sidebar() {
 	endif;
 	get_sidebar();
 }
-add_action( 'tha_content_before', 'csstarter_get_left_sidebar' );
+add_action( 'csstarter_content_before', 'csstarter_get_left_sidebar' );
 
 /**
  * SIDEBAR RIGHT ----------------------
@@ -124,4 +124,4 @@ function csstarter_get_right_sidebar() {
 	endif;
 	get_sidebar();
 }
-add_action( 'tha_content_after', 'csstarter_get_right_sidebar' );
+add_action( 'csstarter_content_after', 'csstarter_get_right_sidebar' );

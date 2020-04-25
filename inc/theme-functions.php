@@ -27,15 +27,15 @@ if ( ! function_exists( 'csstarter_display_header' ) ) {
 		csstarter_header_before_wrap();
 		echo '<div class="header-wrap">';
 		echo '<div class="inner-wrap">';
-			tha_header_top();
-			tha_header_bottom();
+			csstarter_header_top();
+			csstarter_header_bottom();
 		echo '</div>';
 		echo '</div>';
 		csstarter_header_after_wrap();
 		echo '</header>';
 	}
 }
-add_action( 'tha_header_before', 'csstarter_display_header' );
+add_action( 'csstarter_header_before', 'csstarter_display_header' );
 
 
 /*
@@ -74,7 +74,7 @@ if ( ! function_exists( 'csstarter_display_branding' ) ) {
 		echo '</div>';
 	}
 }
-add_action( 'tha_header_top', 'csstarter_display_branding' );
+add_action( 'csstarter_header_top', 'csstarter_display_branding' );
 
 
 /*
@@ -111,7 +111,7 @@ if ( ! function_exists( 'csstarter_display_nav' ) ) {
 		echo '</nav>';
 	}
 }
-add_action( 'tha_header_top', 'csstarter_display_nav' );
+add_action( 'csstarter_header_top', 'csstarter_display_nav' );
 
 
 /*
@@ -153,7 +153,7 @@ if ( ! function_exists( 'csstarter_display_content' ) ) {
 		endif;
 	}
 }
-add_action( 'tha_entry_content_before', 'csstarter_display_content' );
+add_action( 'csstarter_entry_content_before', 'csstarter_display_content' );
 
 
 /*
@@ -190,7 +190,7 @@ if ( ! function_exists( 'csstarter_display_read_more' ) ) {
 		endif;
 	}
 }
-add_action( 'tha_entry_bottom', 'csstarter_display_read_more' );
+add_action( 'csstarter_entry_bottom', 'csstarter_display_read_more' );
 
 
 /*
@@ -247,7 +247,7 @@ if ( ! function_exists( 'csstarter_display_entry_footer' ) ) {
 		endif;
 	}
 }
-add_action( 'tha_entry_bottom', 'csstarter_display_entry_footer' );
+add_action( 'csstarter_entry_bottom', 'csstarter_display_entry_footer' );
 
 
 /*
@@ -262,7 +262,7 @@ if ( ! function_exists( 'csstarter_display_site_footer' ) ) {
 		echo '<footer id="colophon" class="site-footer" role="contentinfo">';
 		echo '<div class="inner-wrap">';
 
-		tha_footer_top();
+		csstarter_footer_top();
 
 		if ( is_active_sidebar( 'footer' ) ) {
 			echo '<div class="site-info">';
@@ -283,11 +283,11 @@ if ( ! function_exists( 'csstarter_display_site_footer' ) ) {
 			echo '</div>';
 		}
 
-		tha_footer_bottom();
+		csstarter_footer_bottom();
 
 		echo '</div>';
 		echo '</footer>';
 
 	}
 }
-add_action( 'tha_footer_before', 'csstarter_display_site_footer' );
+add_action( 'csstarter_footer_before', 'csstarter_display_site_footer' );

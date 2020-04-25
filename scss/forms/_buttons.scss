@@ -18,14 +18,15 @@ input[type="submit"] {
 	}
 }
 
-.btn {
+.btn,
+.wp-block-button__link {
 	background-color: $color__highlight;
 	border-radius: 6px;
 	color:  #ffffff;
 	cursor: pointer;
 	display: inline-block;
-	line-height: normal;
-	padding: 1em;
+	overflow: hidden;
+	padding: .625em 1em;
 	position: relative;
 	white-space: normal;
 	width: auto;
@@ -38,7 +39,6 @@ input[type="submit"] {
 	&:focus,
 	&:active {
 		outline: 0;
-		border: 0;
 		color: #ffffff;
 		border-color: transparent;
 	}
@@ -62,37 +62,57 @@ input[type="submit"] {
 		opacity: 1;
 	}
 
-	&.white {
-		background-color: #ffffff;
-		color: #000000;
-
-		&:after {
-			background-color: $color__base;
-		}
-
-		&:hover {
-			color: #ffffff;
-		}
-	}
-
-	&.secondary {
-		background-color: $color__secondary;
-	}
-
-	&.dark {
-		background-color: $color__base;
-
-		&:after {
-			background-color: rgba(255,255,255,0.2);
-		}
-		&:hover {
-			color: $color__base;
-		}
-	}
-
 	&.wide {
 		width: 100%;
 		text-align: center;
+	}
+
+	&.alignleft {
+		margin-right: 1.5em;
+	}
+	&.alignright {
+		margin-left: 1.5em;
+	}
+}
+
+.is-style-outline {
+	color: #fff;
+}
+
+.btn.alt,
+.is-style-outline .wp-block-button__link,
+.editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link {
+	padding-right: 52px;
+
+	&:before {
+		border-style: solid;
+		border-width: 2px 2px 0 0;
+		border-color: currentColor;
+		content: ' ';
+		font-weight: 900;
+		height: 13px;
+		width: 13px;
+		position: absolute;
+		right: 16px;
+		top: calc(50% - 6px);
+		transform: rotate(45deg);
+		transition: all 0.2s ease-in-out;
+	}
+	&:after {
+		border-radius: 6px 6px 0 0;
+		height: 100%;
+		width: 38px;
+		left: auto;
+		top: 0;
+		right: 0;
+		opacity: 1;
+	}
+	&:hover:before {
+		border-width: 0 0 2px 2px;
+		transform: rotate(-135deg);
+	}
+	&:hover:after {
+		width: 100%;
 	}
 }
 
@@ -107,12 +127,7 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
-.btn {
-	display: inline-block;
-}
-
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	// IE10+ CSS styles go here
 	button,
 	input[type="button"],
 	input[type="reset"],

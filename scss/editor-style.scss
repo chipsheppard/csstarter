@@ -1,0 +1,72 @@
+/*
+ * Theme Name: osixthreeo
+ * Description: Used to style the WP Block Editor.
+----------------------------------------------------------------
+
+	2. 	Elements
+		a. 	Initial setup
+		b. 	Headings
+		c. 	Blockquotes
+		d.	Tables
+		e.	Base font
+	3. 	Forms
+		a. 	Buttons
+		c. 	Search
+	5. 	Modules
+		a. 	Alignments
+		b. 	WordPress specific
+		c. 	Gutenberg (block editor)
+		d. 	Utility
+		e. 	CSS Icons
+	6. 	Layout
+		b. 	The Grid
+	7. 	Site Content
+		d. 	entries
+		f. 	entry-meta
+
+---------------------------------
+ #  1. Setup
+-------------------------------*/
+@import "setup/mixins";
+@import "setup/variables";
+@import "setup/clearings";
+
+/*-------------------------------
+ #  2. Elements
+-------------------------------*/
+@import "elements/elements";
+
+/*-------------------------------
+ #  3. Forms
+-------------------------------*/
+@import "forms/buttons";
+@import "forms/search";
+
+/*-------------------------------
+ #  5. Modules
+-------------------------------*/
+@import "modules/modules";
+
+/*-------------------------------
+ #  6. Layout
+-------------------------------*/
+@import "layout/grid";
+
+/*-------------------------------
+ #  7. Site Content
+-------------------------------*/
+@import "site/404";
+@import "site/entries";
+@import "site/entry-meta";
+
+/*-------------------------------
+Editor Specific
+-------------------------------*/
+
+img.size-auto,
+img.size-large,
+img.size-full,
+img.size-medium {
+	max-width: 100%;
+	height: auto;
+}

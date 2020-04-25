@@ -70,3 +70,62 @@ img.alignright,
 		margin-right: 0;
 	}
 }
+
+/*
+ * Wide & Full width images
+ ---------------------------------- */
+
+ .alignwide,
+ .entry-content ul.wp-block-gallery.alignwide {
+	 margin-left: -40px;
+	 margin-right: -40px;
+	 width: auto;
+	 max-width: 1000%;
+ 
+	 @include breakpoint(desktop-s) {
+		 margin-left: -4%;
+		 margin-right: -4%;
+	 }
+	 @include breakpoint(phone-h) {
+		 margin-left: -5%;
+		 margin-right: -5%;
+	 }
+ }
+ 
+ .alignfull,
+ .entry-content ul.wp-block-gallery.alignfull {
+	 margin-left: calc(50% - 50vw);
+	 margin-right: calc(50% - 50vw);
+	 width: auto;
+	 max-width: 1000%;
+ }
+ 
+ .alignwide img,
+ .alignfull img {
+	 display: block;
+	 width: 100%;
+ }
+ 
+ @include breakpoint(tablet-min-v) {
+	 .sidebar-right .alignfull {
+		 margin-left: calc(70% + 1em - 50vw);
+		 margin-right: -40px;
+	 }
+	 .sidebar-left .alignfull {
+		 margin-left: -40px;
+		 margin-right: calc(70% + 1em - 50vw);
+	 }
+ }
+ 
+ /*
+ * Videos
+ ---------------------------------- */
+ 
+.alignwide iframe,
+.alignwide .jetpack-video-wrapper > iframe {
+	width: calc(100% + 80px) !important;
+}
+.alignfull iframe,
+.alignfull .jetpack-video-wrapper > iframe {
+	width: 100% !important;
+}

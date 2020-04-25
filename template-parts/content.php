@@ -48,18 +48,18 @@ else :
 
 endif;
 
-tha_entry_top();
+csstarter_entry_top();
 
 echo '</div>';
 echo '</header>';
 
 echo '<div class="entry-content">';
 
-	tha_entry_content_before();
-	tha_entry_content_after();
+	csstarter_entry_content_before();
+	csstarter_entry_content_after();
 
 echo '</div>';
 
-tha_entry_bottom();
+csstarter_entry_bottom();
 
 echo '</article>';

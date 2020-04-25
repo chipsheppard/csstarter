@@ -136,22 +136,22 @@ do_action( 'csstarter_init' );
  * The opening wrapper.
  */
 function csstarter_theme_wrapper_start() {
-	tha_content_before();
+	csstarter_content_before();
 	echo '<div id="primary" class="content-area">';
-	tha_content_wrap_before();
+	csstarter_content_wrap_before();
 	echo '<main id="main" class="site-main" role="main">';
-	tha_content_top();
+	csstarter_content_top();
 }
 
 /**
  * The closing wrapper.
  */
 function csstarter_theme_wrapper_end() {
-	tha_content_bottom();
+	csstarter_content_bottom();
 	echo '</main>';
-	tha_content_wrap_after();
+	csstarter_content_wrap_after();
 	echo '</div>';
-	tha_content_after();
+	csstarter_content_after();
 }
 
 /**

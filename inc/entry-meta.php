@@ -142,4 +142,4 @@ function csstarter_display_entry_meta() {
 		echo '</div>';
 	endif;
 }
-add_action( 'tha_entry_top', 'csstarter_display_entry_meta' );
+add_action( 'csstarter_entry_top', 'csstarter_display_entry_meta' );

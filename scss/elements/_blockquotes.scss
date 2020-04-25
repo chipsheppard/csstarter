@@ -8,8 +8,10 @@ q:after {
     content: close-quote;
 }
 
-blockquote {
+blockquote,
+.wp-block-quote {
 	background: rgba(153,153,153,0.05);
+	border: none;
 	margin: .75em 0 1.5em;
 	padding: 1.5em 1.75em;
 	position: relative;
@@ -39,7 +41,7 @@ blockquote {
 		display: block;
 		font-weight: $font__weight-bold;
 		font-style: normal;
-		line-height:1.25;
+		line-height: 1.25;
 		margin-top: .5em;
 		text-transform: uppercase;
 		@include font-size(.875);
@@ -61,5 +63,54 @@ blockquote {
 
 	p:last-child {
 		margin-bottom: 0;
+	}
+
+	&.alignwide,
+	&.alignfull {
+		border: none;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	&.alignleft {
+		margin: 0 1.5em 1.5em 0;
+	}
+	&.alignright {
+		margin: 0 0 1.5em 1.5em;
+	}
+
+	&.is-large,
+	&.is-style-large {
+		margin: .75em 0 1.5em;
+		padding: 1.5em 1.75em 1.5em 2em;
+		position: relative;
+		
+		&:before {
+			content: "\201C";
+			font-family: Georgia, serif;
+			color: $color__base-light;
+			height: 0;
+			top: -4px;
+			left: 4px;
+			@include font-size(4);
+		}
+	
+		p {
+			font-style: normal;
+			line-height: 1.4;
+			@include font-size(1.5);
+		}
+	}
+}
+
+/*
+ * BLOCK EDITOR SPECIFIC
+ ---------------------------------------------- */
+ .editor-styles-wrapper .wp-block-quote.is-style-large {
+	.rich-text {
+		padding-left: .5em;
+	}
+	.wp-block-quote__citation {
+		text-align: right;
 	}
 }

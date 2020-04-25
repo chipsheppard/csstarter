@@ -20,30 +20,30 @@ function csstarter_default_loop() {
 
 	if ( have_posts() ) :
 
-		tha_content_while_before();
+		csstarter_content_while_before();
 
 		echo '<div class="loop-wrap">';
 
 		while ( have_posts() ) :
 			the_post();
-			tha_entry_before();
+			csstarter_entry_before();
 			get_template_part( 'template-parts/content', get_post_format() );
-			tha_entry_after();
+			csstarter_entry_after();
 		endwhile;
 
 		echo '</div>';
 
-		tha_content_while_after();
+		csstarter_content_while_after();
 
 		else :
 
-			tha_entry_before();
+			csstarter_entry_before();
 			get_template_part( 'template-parts/content', 'none' );
-			tha_entry_after();
+			csstarter_entry_after();
 
 	endif;
 }
-add_action( 'tha_content_loop', 'csstarter_default_loop' );
+add_action( 'csstarter_content_loop', 'csstarter_default_loop' );
 
 
 /**
@@ -68,7 +68,7 @@ function csstarter_archive_page_titles() {
 		echo '</header>';
 	endif;
 }
-add_action( 'tha_content_while_before', 'csstarter_archive_page_titles' );
+add_action( 'csstarter_content_while_before', 'csstarter_archive_page_titles' );
 
 
 /**
@@ -87,7 +87,7 @@ function csstarter_postpagination() {
 	endif;
 
 }
-add_action( 'tha_content_while_after', 'csstarter_postpagination' );
+add_action( 'csstarter_content_while_after', 'csstarter_postpagination' );
 
 
 /**
@@ -105,7 +105,7 @@ function csstarter_postnav() {
 	endif;
 
 }
-add_action( 'tha_entry_after', 'csstarter_postnav' );
+add_action( 'csstarter_entry_after', 'csstarter_postnav' );
 
 
 /**
@@ -118,4 +118,4 @@ function csstarter_comments() {
 	}
 
 }
-add_action( 'tha_content_while_after', 'csstarter_comments' );
+add_action( 'csstarter_content_while_after', 'csstarter_comments' );

@@ -166,6 +166,21 @@
 	width: 100%;
 }
 
+/* Block Editor */
+.entry-content ul.wp-block-gallery {
+	margin-left: 0;
+}
+.wp-block-separator {
+	clear:both;
+	display: block;
+}
+.wp-block-gallery.alignleft {
+	margin-right: 1.5em;
+}
+.wp-block-gallery.alignright {
+	margin-left: 1.5em;
+}
+
 /* Audio Embeds ???? */
 .mejs-button>button {
 	background-color: transparent !important;
@@ -176,6 +191,7 @@
 	display: inline;
 }
 
+/* Widget */
 .widget_media_gallery .gallery-item {
 	margin: 0 1%
 }

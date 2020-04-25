@@ -17,7 +17,7 @@ if ( post_password_required() ) {
 	return;
 }
 
-tha_comments_before();
+csstarter_comments_before();
 echo '<div id="comments" class="comments-area">';
 
 if ( have_comments() ) :
@@ -75,4 +75,4 @@ endif;
 comment_form();
 
 echo '</div>';
-tha_comments_after();
+csstarter_comments_after();
