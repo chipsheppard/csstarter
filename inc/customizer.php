@@ -393,12 +393,30 @@ if ( ! function_exists( 'csstarter_customize_register' ) ) {
 		$wp_customize->add_control(
 			'csstarter_settings[meta_footer]',
 			array(
-				'type'        => 'checkbox',
-				'label'       => esc_html__( 'Show post footer meta data', 'csstarter' ),
-				'description' => esc_html__( 'Categories/Tags', 'csstarter' ),
-				'section'     => 'csstarter_themeops',
-				'settings'    => 'csstarter_settings[meta_footer]',
-				'priority'    => 17,
+				'type'     => 'checkbox',
+				'label'    => esc_html__( 'Categories & Tags', 'csstarter' ),
+				'section'  => 'csstarter_themeops',
+				'settings' => 'csstarter_settings[meta_footer]',
+				'priority' => 17,
+			)
+		);
+		// show post navigation.
+		$wp_customize->add_setting(
+			'csstarter_settings[post_nav]',
+			array(
+				'default'           => $defaults['post_nav'],
+				'type'              => 'option',
+				'sanitize_callback' => 'csstarter_sanitize_checkbox',
+			)
+		);
+		$wp_customize->add_control(
+			'csstarter_settings[post_nav]',
+			array(
+				'type'     => 'checkbox',
+				'label'    => esc_html__( 'Post Navigation (prev, next)', 'csstarter' ),
+				'section'  => 'csstarter_themeops',
+				'settings' => 'csstarter_settings[post_nav]',
+				'priority' => 18,
 			)
 		);
 

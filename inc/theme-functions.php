@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /*
- * DISPLAY Header
+ * HEADER
  * -----------------------------------------------------------------
  */
 if ( ! function_exists( 'csstarter_display_header' ) ) {
@@ -39,7 +39,7 @@ add_action( 'csstarter_header_before', 'csstarter_display_header' );
 
 
 /*
- * DISPLAY Branding
+ * HEADER Branding
  * -----------------------------------------------------------------
  */
 if ( ! function_exists( 'csstarter_display_branding' ) ) {
@@ -78,7 +78,7 @@ add_action( 'csstarter_header_top', 'csstarter_display_branding' );
 
 
 /*
- * DISPLAY Navigation
+ * HEADER Navigation
  * -----------------------------------------------------------------
  */
 if ( ! function_exists( 'csstarter_display_nav' ) ) {
@@ -115,7 +115,7 @@ add_action( 'csstarter_header_top', 'csstarter_display_nav' );
 
 
 /*
- * DISPLAY The Content
+ * The Content
  * -----------------------------------------------------------------
  */
 if ( ! function_exists( 'csstarter_display_content' ) ) {
@@ -157,44 +157,25 @@ add_action( 'csstarter_entry_content_before', 'csstarter_display_content' );
 
 
 /*
- * DISPLAY Read More link
+ * Comments
  * -----------------------------------------------------------------
  */
-if ( ! function_exists( 'csstarter_display_read_more' ) ) {
+if ( ! function_exists( 'csstarter_comments' ) ) {
 	/**
-	 * The Read More link markup
+	 * WP Comments
 	 */
-	function csstarter_display_read_more() {
-		$csstarter_settings = wp_parse_args(
-			get_option( 'csstarter_settings', array() ),
-			csstarter_get_defaults()
-		);
-		$hide_rm            = $csstarter_settings['archives_hide_readmore'];
+	function csstarter_comments() {
 
-		if ( true === $hide_rm ) {
-			return;
+		if ( is_singular() && ( comments_open() || get_comments_number() ) ) {
+			comments_template();
 		}
-
-		if ( is_archive() || is_home() || is_search() ) :
-			$link = sprintf(
-				'<footer class="link-more"><a href="%1$s" class="more-link">%2$s</a></footer>',
-				get_permalink( get_the_ID() ),
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Continue<span class="screen-reader-text"> "%s"</span>', 'csstarter' ),
-					get_the_title( get_the_ID() )
-				)
-			);
-			echo wp_kses_post( $link );
-			echo '<div class="cf"></div>';
-		endif;
 	}
 }
-add_action( 'csstarter_entry_bottom', 'csstarter_display_read_more' );
+add_action( 'csstarter_content_while_after', 'csstarter_comments' );
 
 
 /*
- * DISPLAY Entry Footer Meta
+ * POST Footer Meta
  * -----------------------------------------------------------------
  */
 if ( ! function_exists( 'csstarter_display_entry_footer' ) ) {
@@ -251,7 +232,131 @@ add_action( 'csstarter_entry_bottom', 'csstarter_display_entry_footer' );
 
 
 /*
- * DISPLAY Site Footer
+ * POST Navigation (prev - next)
+ * -----------------------------------------------------------------
+ */
+if ( ! function_exists( 'csstarter_postnav' ) ) {
+	/**
+	 * Post Navigation (prev - next)
+	 */
+	function csstarter_postnav() {
+
+		$csstarter_settings = wp_parse_args(
+			get_option( 'csstarter_settings', array() ),
+			csstarter_get_defaults()
+		);
+		$post_nav           = $csstarter_settings['post_nav'];
+
+		if ( true === $post_nav && is_single() ) :
+			the_post_navigation(
+				array(
+					'prev_text' => __( '<span>previous</span> %title', 'csstarter' ),
+					'next_text' => __( '<span>next</span> %title', 'csstarter' ),
+				)
+			);
+		endif;
+	}
+}
+add_action( 'csstarter_entry_after', 'csstarter_postnav' );
+
+
+/*
+ * ARCHIVE Page Titles
+ * -----------------------------------------------------------------
+ */
+if ( ! function_exists( 'cssstarter_archive_page_titles' ) ) {
+	/**
+	 * Archive Page Titles
+	 */
+	function csstarter_archive_page_titles() {
+		if ( is_home() && ! is_front_page() || is_archive() || is_search() ) :
+			echo '<header class="page-header">';
+			echo '<div class="title-wrap">';
+
+			if ( is_search() ) :
+				echo '<h1 class="page-title">';
+				/* translators: %$2s: is the search term */
+				printf( '<span>' . esc_html__( 'Search Results for:%1$s %2$s', 'csstarter' ), '</span>', get_search_query() );
+				echo '</h1>';
+			else :
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+			endif;
+
+			echo '</div>';
+			echo '</header>';
+		endif;
+	}
+}
+add_action( 'csstarter_content_while_before', 'csstarter_archive_page_titles' );
+
+
+/*
+ * ARCHIVE Pagination (<< 1 of 10 >>)
+ * -----------------------------------------------------------------
+ */
+if ( ! function_exists( 'cssstarter_postpagination' ) ) {
+	/**
+	 * Archive Pagination
+	 */
+	function csstarter_postpagination() {
+
+		if ( is_archive() || is_home() ) :
+			the_posts_pagination(
+				array(
+					'mid_size'  => 2,
+					'prev_text' => __( '&laquo; Previous', 'csstarter' ),
+					'next_text' => __( 'Next &raquo;', 'csstarter' ),
+				)
+			);
+		endif;
+	}
+}
+add_action( 'csstarter_content_while_after', 'csstarter_postpagination' );
+
+
+
+
+
+/*
+ * ARCHIVE Read More link
+ * -----------------------------------------------------------------
+ */
+if ( ! function_exists( 'csstarter_display_read_more' ) ) {
+	/**
+	 * The Read More link markup
+	 */
+	function csstarter_display_read_more() {
+		$csstarter_settings = wp_parse_args(
+			get_option( 'csstarter_settings', array() ),
+			csstarter_get_defaults()
+		);
+		$hide_rm            = $csstarter_settings['archives_hide_readmore'];
+
+		if ( true === $hide_rm ) {
+			return;
+		}
+
+		if ( is_archive() || is_home() || is_search() ) :
+			$link = sprintf(
+				'<footer class="link-more"><a href="%1$s" class="more-link">%2$s</a></footer>',
+				get_permalink( get_the_ID() ),
+				sprintf(
+					/* translators: %s: Name of current post */
+					__( 'Continue<span class="screen-reader-text"> "%s"</span>', 'csstarter' ),
+					get_the_title( get_the_ID() )
+				)
+			);
+			echo wp_kses_post( $link );
+			echo '<div class="cf"></div>';
+		endif;
+	}
+}
+add_action( 'csstarter_entry_bottom', 'csstarter_display_read_more' );
+
+
+/*
+ * FOOTER
  * -----------------------------------------------------------------
  */
 if ( ! function_exists( 'csstarter_display_site_footer' ) ) {

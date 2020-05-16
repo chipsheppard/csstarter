@@ -32,6 +32,7 @@ if ( ! function_exists( 'csstarter_get_defaults' ) ) {
 			'meta_comments'               => true,
 			'meta_updated'                => true,
 			'meta_footer'                 => true,
+			'post_nav'                    => true,
 			'archives_hide_featuredimage' => '',
 			'archives_hide_excerpt'       => '',
 			'archives_hide_readmore'      => '',

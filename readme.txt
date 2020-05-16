@@ -3,8 +3,8 @@
 Contributors: ultranorman
 Tags: translation-ready, theme-options, full-width-template, custom-logo, custom-background, flexible-header, align-wide, block-styles
 Requires at least: 4.0
-Tested up to: 5.2.4
-Stable tag: 1.0.1
+Tested up to: 5.4.1
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,9 +67,6 @@ mobile-only - will only display on devices 768 pixels wide and lower.
 desktop-only - will only display on devices 769 pixels wide and greater.
 
 == ChangeLog ==
-
-= 1.0.1 - 04 23 2019 =
-* Remove THA
 
 = 1.0.0 - 10 16 2019 =
 * First deploy to GIT
