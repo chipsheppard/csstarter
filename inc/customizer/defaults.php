@@ -37,7 +37,6 @@ if ( ! function_exists( 'csstarter_get_defaults' ) ) {
 			'archives_hide_excerpt'       => '',
 			'archives_hide_readmore'      => '',
 			'archives_hide_meta'          => '',
-			'nav_search'                  => '',
 		);
 
 		return apply_filters( 'csstarter_option_defaults', $csstarter_defaults );
