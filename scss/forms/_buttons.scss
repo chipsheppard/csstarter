@@ -20,9 +20,6 @@ input[type="submit"] {
 
 .btn,
 .wp-block-button__link {
-	background-color: $color__highlight;
-	border-radius: 6px;
-	color:  #ffffff;
 	cursor: pointer;
 	display: inline-block;
 	overflow: hidden;
@@ -32,20 +29,14 @@ input[type="submit"] {
 	width: auto;
 	z-index: 1;
 
-	&:hover {
-		color: #ffffff;
-	}
-
 	&:focus,
 	&:active {
 		outline: 0;
-		color: #ffffff;
 		border-color: transparent;
 	}
 
 	&:after {
 		background-color: rgba(0,0,0,0.2);
-		border-radius: 6px;
 		content: '';
 		position: absolute;
 		z-index: -1;
@@ -66,17 +57,19 @@ input[type="submit"] {
 		width: 100%;
 		text-align: center;
 	}
-
-	&.alignleft {
-		margin-right: 1.5em;
-	}
-	&.alignright {
-		margin-left: 1.5em;
-	}
 }
 
-.is-style-outline {
-	color: #fff;
+.btn {
+	background-color: $color__highlight;
+	border-radius: 6px;
+	color:  #ffffff;
+}
+
+.wp-block-button.alignleft {
+	margin-right: 1.5em;
+}
+.wp-block-button.alignright {
+	margin-left: 1.5em;
 }
 
 .btn.alt,
@@ -99,7 +92,6 @@ input[type="submit"] {
 		transition: all 0.2s ease-in-out;
 	}
 	&:after {
-		border-radius: 6px 6px 0 0;
 		height: 100%;
 		width: 38px;
 		left: auto;

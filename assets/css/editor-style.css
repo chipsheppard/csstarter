@@ -495,9 +495,6 @@ input[type="submit"]:hover {
 
 .btn,
 .wp-block-button__link {
-  background-color: #4169e1;
-  border-radius: 6px;
-  color: #ffffff;
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
@@ -508,23 +505,16 @@ input[type="submit"]:hover {
   z-index: 1;
 }
 
-.btn:hover,
-.wp-block-button__link:hover {
-  color: #ffffff;
-}
-
 .btn:focus, .btn:active,
 .wp-block-button__link:focus,
 .wp-block-button__link:active {
   outline: 0;
-  color: #ffffff;
   border-color: transparent;
 }
 
 .btn:after,
 .wp-block-button__link:after {
   background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
   content: '';
   position: absolute;
   z-index: -1;
@@ -548,18 +538,18 @@ input[type="submit"]:hover {
   text-align: center;
 }
 
-.btn.alignleft,
-.wp-block-button__link.alignleft {
+.btn {
+  background-color: #4169e1;
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+.wp-block-button.alignleft {
   margin-right: 1.5em;
 }
 
-.btn.alignright,
-.wp-block-button__link.alignright {
+.wp-block-button.alignright {
   margin-left: 1.5em;
-}
-
-.is-style-outline {
-  color: #fff;
 }
 
 .btn.alt,
@@ -588,7 +578,6 @@ input[type="submit"]:hover {
 .btn.alt:after,
 .is-style-outline .wp-block-button__link:after,
 .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:after {
-  border-radius: 6px 6px 0 0;
   height: 100%;
   width: 38px;
   left: auto;
@@ -1494,7 +1483,7 @@ body.home.page .entry-header {
 }
 
 .entry-content ol,
-.entry-content ul:not(.alignfull):not(.alignwide):not(.wp-block-gallery) {
+.entry-content ul:not(.alignfull):not(.alignwide):not(.wp-block-gallery):not(.blocks-gallery-grid) {
   margin-left: 1.5em;
 }
 

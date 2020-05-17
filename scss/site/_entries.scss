@@ -43,7 +43,7 @@ body.home.page .entry-header {
 
 .entry-content {
 	ol,
-	ul:not(.alignfull):not(.alignwide):not(.wp-block-gallery) {
+	ul:not(.alignfull):not(.alignwide):not(.wp-block-gallery):not(.blocks-gallery-grid) {
 		margin-left: 1.5em;
 	}
 
