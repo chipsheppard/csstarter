@@ -1843,9 +1843,13 @@ button.dropdown-toggle.toggled-on:after {
 
 .pagination .current,
 .pagination a:hover,
+.pagination a:focus,
+.pagination a:active,
 .pagination a.current,
 .page-links .current,
 .page-links a:hover,
+.page-links a:focus,
+.page-links a:active,
 .page-links a.current {
   background-color: #808080;
 }

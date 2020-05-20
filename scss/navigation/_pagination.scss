@@ -20,6 +20,8 @@
 
 	.current,
 	a:hover,
+	a:focus,
+	a:active,
 	a.current {
 		background-color: $color__base-medium;
 	}

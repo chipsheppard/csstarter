@@ -43,11 +43,25 @@ add_filter( 'http_request_args', 'csstarter_dont_update_theme', 5, 2 );
 function csstarter_header_meta_tags() {
 	echo '<meta charset="' . esc_html( get_bloginfo( 'charset' ) ) . '">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">';
+<link rel="profile" href="http://gmpg.org/xfn/11">';
 }
 add_action( 'csstarter_head_top', 'csstarter_header_meta_tags' );
 
+/**
+ * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ */
+function csstarter_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf(
+			'<link rel="pingback" href="%s">
+',
+			esc_url(
+				get_bloginfo( 'pingback_url' )
+			)
+		);
+	}
+}
+add_action( 'csstarter_head_top', 'csstarter_pingback_header' );
 
 /**
  * Remove injected styles from recent comments widget.
@@ -101,7 +115,9 @@ add_filter( 'get_the_archive_title', 'csstarter_archive_title_wrap' );
  * @return int modified excerpt length.
  */
 function csstarter_custom_excerpt_length( $length ) {
-	if ( has_post_format( 'aside' ) || has_post_format( 'status' ) ) :
+	if ( is_admin() ) :
+		return $length;
+	elseif ( has_post_format( 'aside' ) || has_post_format( 'status' ) ) :
 		return 48;
 	elseif ( is_search() ) :
 		return 32;
@@ -121,7 +137,7 @@ add_filter( 'excerpt_length', 'csstarter_custom_excerpt_length', 999 );
 function csstarter_search_button( $form ) {
 	$form = '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '" >
 	<label for="s">
-		<span class="screen-reader-text">' . __( 'search for', 'csstarter' ) . '</span>
+		<span class="screen-reader-text">' . esc_html__( 'search for', 'csstarter' ) . '</span>
 		<input type="search" class="search-field" placeholder="' . esc_attr__( 'Search ...', 'csstarter' ) . '" value="' . get_search_query() . '" name="s" />
 	</label>
 	<input type="submit" class="search-submit" value="' . esc_attr__( 'go', 'csstarter' ) . '" />
