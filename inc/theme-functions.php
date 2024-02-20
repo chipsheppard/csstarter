@@ -52,13 +52,13 @@ if ( ! function_exists( 'csstarter_display_branding' ) ) {
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
 		$logo           = wp_get_attachment_image_src( $custom_logo_id, 'full' );
 		$sitename       = get_bloginfo( 'name', 'display' );
-		$logoheight     = absint( $logo[2] );
-		$logowidth      = absint( $logo[1] );
-		$description    = get_bloginfo( 'description', 'display' );
+		// $logoheight     = absint( $logo[2] );
+		// $logowidth      = absint( $logo[1] );
+		$description = get_bloginfo( 'description', 'display' );
 
 		if ( has_custom_logo() ) {
 			echo '<div class="custom-logo">';
-			echo '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home"><img src="' . esc_url( $logo[0] ) . '" height="' . esc_attr( $logoheight ) . '" width="' . esc_attr( $logowidth ) . '" alt="' . esc_attr( $sitename ) . '"></a>';
+			echo '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home"><img src="' . esc_url( $logo[0] ) . '" height="' . esc_attr( $logo[2] ) . '" width="' . esc_attr( $logo[1] ) . '" alt="' . esc_attr( $sitename ) . '"></a>';
 			echo '</div>';
 		} else {
 			if ( is_front_page() && is_home() ) :
